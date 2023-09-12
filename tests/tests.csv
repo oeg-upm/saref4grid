@@ -1,0 +1,173 @@
+Id;Requirement;Category;Test
+GRID-TEST-1;GRID-1;Remote management of meters;Meter hasPropertyValue PropertyValue
+GRID-TEST-2;GRID-1;Remote management of meters;PropertyValue hasProperty MeterProperty
+GRID-TEST-3;GRID-1;Remote management of meters;Manufacturer type MeterProperty
+GRID-TEST-4;GRID-2;Remote management of meters;ScreenDisplay type MeterProperty
+GRID-TEST-5;GRID-3;Remote management of meters;TransformerRatio type MeterProperty
+GRID-TEST-6;GRID-4;Remote management of meters;TransformerRatio type MeterProperty
+GRID-TEST-7;GRID-5;Remote management of meters;Meter hasFirmware Firmware
+GRID-TEST-8;GRID-6;Remote management of meters;Network type MeterProperty
+GRID-TEST-9;GRID-7;Remote management of meters;MeterProperty hasObis string
+GRID-TEST-10;GRID-7;Remote management of meters;Meter hasService GetService
+GRID-TEST-11;GRID-7;Remote management of meters;GetService hasOperation GetOperation
+GRID-TEST-12;GRID-7;Remote management of meters;GetService hasInput GetOperationPropertyInput
+GRID-TEST-13;GRID-7;Remote management of meters;GetOperationPropertyInput obtainInputFromObis string
+GRID-TEST-14;GRID-7;Remote management of meters;GetOperationPropertyInput obtainInputForProperty string
+GRID-TEST-15;GRID-7;Remote management of meters;GetService hasOutput GetOperationObjectOutput
+GRID-TEST-16;GRID-7;Remote management of meters;GetOperationObjectOutput outputObjectType string
+GRID-TEST-17;GRID-8;Remote management of meters;Meter hasService SetService
+GRID-TEST-18;GRID-8;Remote management of meters;SetService hasOperation SetOperation
+GRID-TEST-19;GRID-8;Remote management of meters;SetOperation hasInput SetOperationObjectInput
+GRID-TEST-20;GRID-8;Remote management of meters;SetOperationObjectInput obtainInputFromObis string
+GRID-TEST-21;GRID-8;Remote management of meters;SetOperationObjectInput obtainInputForProperty string
+GRID-TEST-22;GRID-8;Remote management of meters;SetOperationObjectInput inputObjectType string
+GRID-TEST-23;GRID-8;Remote management of meters;Meter hasService GetService
+GRID-TEST-24;GRID-9;Remote management of meters;Meter hasService SetService
+GRID-TEST-25;GRID-9;Remote management of meters;Meter hasService GetService
+GRID-TEST-26;GRID-10;Remote management of meters;Meter hasService SetService
+GRID-TEST-27;GRID-10;Remote management of meters;Meter hasService GetService
+GRID-TEST-28;GRID-11;Remote management of meters;Meter hasService SetService
+GRID-TEST-29;GRID-11;Remote management of meters;Meter hasService GetService
+GRID-TEST-30;GRID-12;Remote management of meters;SetOperation hasInput SetOperationDataInput
+GRID-TEST-31;GRID-12;Remote management of meters;SetOperationDataInput obtainInputFromObis string
+GRID-TEST-32;GRID-12;Remote management of meters;SetOperationDataInput obtainInputForProperty string
+GRID-TEST-33;GRID-12;Remote management of meters;SetOperationDataInput hasInputDataType string
+GRID-TEST-34;GRID-13;Remote management of meters;Meter hasState ConnectivityState
+GRID-TEST-35;GRID-14;Remote management of meters;Threshold type MeterProperty
+GRID-TEST-36;GRID-15;Remote management of meters;MeterProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-37;GRID-16;Remote management of meters;Meter hasSingleScheduledAction SingleScheduledAction
+GRID-TEST-38;GRID-17;Remote management of meters;SetOperation hasInput SetOperationObisInput
+GRID-TEST-39;GRID-17;Remote management of meters;SetOperationObisInput obtainInputFromObis string
+GRID-TEST-40;GRID-17;Remote management of meters;SetOperationObisInput inputObjectType string
+GRID-TEST-41;GRID-18;Remote management of meters;SingleScheduledAction executesScript Script
+GRID-TEST-42;GRID-18;Remote management of meters;SimgleScheduledAction hasExecutionTime dateTime
+GRID-TEST-43;GRID-19;Remote management of meters;Meter hasActivityCalendar ActivityCalendar
+GRID-TEST-44;GRID-20;Remote management of meters;Meter hasActivityCalendar ActivityCalendar
+GRID-TEST-45;GRID-21;Remote management of meters;PowerLimit type MeterProperty
+GRID-TEST-46;GRID-22;Remote management of meters;PropertyValue hasValue
+GRID-TEST-47;GRID-23;Remote management of meters;MeterProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-48;GRID-24;Remote management of meters;Meter hasService SetService
+GRID-TEST-49;GRID-25;Remote management of meters;Meter hasService SetService
+GRID-TEST-50;GRID-26;Remote management of meters;Meter measuresProperty PowerLinePropety
+GRID-TEST-51;GRID-26;Remote management of meters;PowerLineProperty isPropertyOf PowerLine
+GRID-TEST-52;GRID-26;Remote management of meters;ActiveEnergy type PowerLineProperty
+GRID-TEST-53;GRID-27;Remote management of meters;ActiveEnergy type PowerLineProperty
+GRID-TEST-54;GRID-28;Remote management of meters;PowerLineProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-55;GRID-29;Remote management of meters;ReactiveEnergy type PowerLineProperty
+GRID-TEST-56;GRID-30;Remote management of meters;PowerLineProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-57;GRID-31;Remote management of meters;ActiveEnergy type PowerLineProperty
+GRID-TEST-58;GRID-31;Remote management of meters;ReactiveEnergy type PowerLineProperty
+GRID-TEST-59;GRID-32;Remote management of meters;Measurement hasTimestamp dateTime
+GRID-TEST-60;GRID-33;Remote management of meters;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-61;GRID-34;Remote management of meters;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-62;GRID-34;Remote management of meters;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-63;GRID-35;Remote management of meters;Meter hasService GetService
+GRID-TEST-64;GRID-36;Remote management of meters;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-65;GRID-36;Remote management of meters;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-66;GRID-37;Remote management of meters;Meter hasService GetService
+GRID-TEST-67;GRID-38;Remote management of meters;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-68;GRID-38;Remote management of meters;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-69;GRID-39;Remote management of meters;Meter hasService GetService
+GRID-TEST-70;GRID-40;Remote management of meters;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-71;GRID-40;Remote management of meters;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-72;GRID-41;Remote management of meters;Threshold type MeterProperty
+GRID-TEST-73;GRID-42;Remote management of meters;MeterProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-74;GRID-43;Remote management of meters;TimeThreshold type MeterProperty
+GRID-TEST-75;GRID-44;Remote management of meters;MeterProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-76;GRID-45;Remote management of meters;VoltageSagNumber type MeterProperty
+GRID-TEST-77;GRID-45;Remote management of meters;VoltageSwellNumber type MeterProperty
+GRID-TEST-78;GRID-45;Remote management of meters;LongPowerFailuresNumber type MeterProperty
+GRID-TEST-79;GRID-46;Remote management of meters;DurationVoltageSag type PowerLineProperty
+GRID-TEST-80;GRID-46;Remote management of meters;DurationVoltageSwell type PowerLineProperty
+GRID-TEST-81;GRID-46;Remote management of meters;DurationLongPowerFailure type PowerLineProperty
+GRID-TEST-82;GRID-47;Remote management of meters;PowerLineProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-83;GRID-48;Remote management of meters;Meter hasService GetService
+GRID-TEST-84;GRID-49;Remote management of meters;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-85;GRID-49;Remote management of meters;ProfileGeneric relatedPropertyValue PropertyValue
+GRID-TEST-86;GRID-50;Remote management of meters;Meter hasService GetService
+GRID-TEST-87;GRID-51;Remote management of meters;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-88;GRID-51;Remote management of meters;ProfileGeneric relatedPropertyValue PropertyValue
+GRID-TEST-89;GRID-54;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-90;GRID-55;Management of tertiary sensor devices;Manufacturer type MeterProperty
+GRID-TEST-91;GRID-56;Management of tertiary sensor devices;Meter hasFirmware Firmware
+GRID-TEST-92;GRID-57;Management of tertiary sensor devices;Network type MeterProperty
+GRID-TEST-93;GRID-58;Management of tertiary sensor devices;Meter hasSingleScheduledAction SingleScheduledAction
+GRID-TEST-94;GRID-59;Management of tertiary sensor devices;Meter hasPropertyValue PropertyValue
+GRID-TEST-95;GRID-59;Management of tertiary sensor devices;PropertyValue hasProperty MeterProperty
+GRID-TEST-96;GRID-61;Management of tertiary sensor devices;Meter hasService SetService
+GRID-TEST-97;GRID-62;Management of tertiary sensor devices;SingleScheduledAction executesScript Script
+GRID-TEST-98;GRID-63;Management of tertiary sensor devices;SingleScheduledAction executesScript Script
+GRID-TEST-99;GRID-64;Management of tertiary sensor devices;Meter hasService SetService
+GRID-TEST-100;GRID-65;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-101;GRID-67;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-102;GRID-68;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-103;GRID-69;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-104;GRID-70;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-105;GRID-71;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-106;GRID-72;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-107;GRID-73;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-108;GRID-74;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-109;GRID-75;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-110;GRID-76;Management of tertiary sensor devices;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-111;GRID-77;Management of tertiary sensor devices;Manufacturer type MeterProperty
+GRID-TEST-112;GRID-78;Management of tertiary sensor devices;Meter hasFirmware Firmware
+GRID-TEST-113;GRID-79;Management of tertiary sensor devices;Network type MeterProperty
+GRID-TEST-114;GRID-80;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-115;GRID-81;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-116;GRID-82;Management of tertiary sensor devices;Meter hasService SetService
+GRID-TEST-117;GRID-83;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-118;GRID-84;Management of tertiary sensor devices;Meter hasService SetService
+GRID-TEST-119;GRID-87;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-120;GRID-88;Management of tertiary sensor devices;Manufacturer type MeterProperty
+GRID-TEST-121;GRID-89;Management of tertiary sensor devices;Meter hasFirmware Firmware
+GRID-TEST-122;GRID-90;Management of tertiary sensor devices;Meter hasSingleScheduledAction SingleScheduledAction
+GRID-TEST-123;GRID-91;Management of tertiary sensor devices;Meter hasPropertyValue PropertyValue
+GRID-TEST-124;GRID-91;Management of tertiary sensor devices;PropertyValue hasProperty MeterProperty
+GRID-TEST-125;GRID-93;Management of tertiary sensor devices;Meter hasService SetService
+GRID-TEST-126;GRID-94;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-127;GRID-95;Management of tertiary sensor devices;Meter hasService SetService
+GRID-TEST-128;GRID-96;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-129;GRID-97;Management of tertiary sensor devices;Meter hasService GetService
+GRID-TEST-130;GRID-99;Management of OLTC transformers;Current type PowerLineProperties
+GRID-TEST-131;GRID-99;Management of OLTC transformers;Voltage type PowerLineProperties
+GRID-TEST-132;GRID-99;Management of OLTC transformers;ActivePower type PowerLineProperties
+GRID-TEST-133;GRID-99;Management of OLTC transformers;ReactivePower type PowerLineProperties
+GRID-TEST-134;GRID-100;Management of OLTC transformers;Current type PowerLineProperties
+GRID-TEST-135;GRID-100;Management of OLTC transformers;Voltage type PowerLineProperties
+GRID-TEST-136;GRID-100;Management of OLTC transformers;ActivePower type PowerLineProperties
+GRID-TEST-137;GRID-100;Management of OLTC transformers;ReactivePower type PowerLineProperties
+GRID-TEST-138;GRID-101;Management of OLTC transformers;Voltage type PowerLineProperties
+GRID-TEST-139;GRID-102;Management of OLTC transformers;Voltage type PowerLineProperties
+GRID-TEST-140;GRID-103;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-141;GRID-104;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-142;GRID-105;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-143;GRID-106;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-144;GRID-106;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-145;GRID-107;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-146;GRID-108;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-147;GRID-108;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-148;GRID-109;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-149;GRID-110;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-150;GRID-110;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-151;GRID-111;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-152;GRID-112;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-153;GRID-112;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-154;GRID-113;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-155;GRID-114;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-156;GRID-114;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-157;GRID-115;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-158;GRID-116;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-159;GRID-116;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-160;GRID-117;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-161;GRID-118;Management of OLTC transformers;Meter hasService GetService
+GRID-TEST-162;GRID-119;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-163;GRID-119;Management of OLTC transformers;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-164;GRID-120;Detection of meters connectivity;Meter hasState ConnectivityState
+GRID-TEST-165;GRID-121;Detection of meters connectivity;Meter hasState ConnectivityState
+GRID-TEST-166;GRID-122;Detection of meters connectivity;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-167;GRID-123;Detection of meters connectivity;Meter hasService GetService
+GRID-TEST-168;GRID-124;Detection of meters connectivity;Meter hasProfileGeneric ProfileGeneric
+GRID-TEST-169;GRID-124;Detection of meters connectivity;Meter hasService GetService
+GRID-TEST-170;GRID-125;Detection of meters connectivity;ProfileGeneric relatedMeasurement Measurement
+GRID-TEST-171;GRID-125;Detection of meters connectivity;ProfileGeneric hasCapturePeriod unsignedLong
+GRID-TEST-172;GRID-126;Detection of meters connectivity;Meter hasService GetService

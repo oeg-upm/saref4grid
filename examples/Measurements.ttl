@@ -1,0 +1,123 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/Measurements/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2008/05/skos#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2> .
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/Measurements#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Measurements"@en ;
+  dcterms:description "Example Measurements"@en .
+
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+saref:makesMeasurement a owl:ObjectProperty .
+
+saref:hasProperty a owl:ObjectProperty .
+
+saref:isMeasuredIn a owl:ObjectProperty .
+
+saref:isPropertyOf a owl:ObjectProperty .
+
+saref:relatesToMeasurement a owl:ObjectProperty .
+
+saref:relatesToProperty a owl:ObjectProperty .
+
+skos:broader a owl:ObjectProperty .
+
+skos:narrower a owl:ObjectProperty .
+	
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:hasObis a owl:DatatypeProperty .
+
+saref:hasTimestamp a owl:DatatypeProperty .
+
+saref:hasValue a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+s4grid:Meter a owl:Class .
+
+s4grid:PowerLine a owl:Class .
+
+saref:EnergyUnit a owl:Class .
+
+saref:Measurement a owl:Class .
+
+s4grid:PowerLineProperty a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+om:watt a saref:EnergyUnit,
+		owl:NamedIndividual .
+
+s4grid:ActiveEnergy a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+    skos:narrower ex:TotalIncrementalActiveEnergyImport .
+
+s4grid:DemandRegister a s4grid:PowerLineProperty,
+	owl:NamedIndividual ;
+    skos:narrower ex:MaximumDemandRegisterImportC1TP1 .
+
+ex:MaximumDemandRegisterImportC1TP1Measurement136 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:hasTimestamp "2023-10-20T21:01:10"^^xsd:dateTime ;
+    saref:hasValue "5"^^xsd:unsignedLong ;
+    saref:isMeasuredIn om:watt ;
+	saref:relatesToProperty ex:MaximumDemandRegisterImportC1TP1 .
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+    saref:makesMeasurement ex:TotalIncrementalActiveEnergyImportMeasurement123,
+			ex:MaximumDemandRegisterImportC1TP1Measurement136 .
+
+om:wattHour a saref:EnergyUnit,
+        owl:NamedIndividual .
+
+ex:MaximumDemandRegisterImportC1TP1 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+    s4grid:hasObis "1-0:1.6.11.255"^^xsd:string ;
+    saref:isPropertyOf ex:SubstationLine23 ;
+	saref:relatesToMeasurement ex:MaximumDemandRegisterImportC1TP1Measurement136 ;
+	skos:broader s4grid:DemandRegister .
+
+ex:TotalIncrementalActiveEnergyImportMeasurement123 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:hasTimestamp "2023-10-20T21:01:10"^^xsd:dateTime ;
+    saref:hasValue "5"^^xsd:unsignedLong ;
+    saref:isMeasuredIn om:wattHour ;
+	saref:relatesToProperty ex:TotalIncrementalActiveEnergyImport .
+
+ex:SubstationLine23 a s4grid:PowerLine,
+        owl:NamedIndividual ;
+    saref:hasProperty ex:MaximumDemandRegisterImportC1TP1,
+        ex:TotalIncrementalActiveEnergyImport .
+
+ex:TotalIncrementalActiveEnergyImport a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+    s4grid:hasObis "1-0:1.29.0.255"^^xsd:string ;
+    saref:isPropertyOf ex:SubstationLine23 ;
+	saref:relatesToMeasurement ex:TotalIncrementalActiveEnergyImportMeasurement123 ;
+	skos:broader s4grid:ActiveEnergy .

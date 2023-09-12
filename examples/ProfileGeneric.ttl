@@ -1,0 +1,172 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/ProfileGeneric/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2008/05/skos#> .
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/ProfileGeneric#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Profile Generic"@en ;
+  dcterms:description "Example Profile Generic"@en .
+
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+s4grid:hasProperty a owl:ObjectProperty .
+
+s4grid:hasProfileGeneric a owl:ObjectProperty .
+
+s4grid:relatedClock a owl:ObjectProperty .
+
+s4grid:relatedMeasurement a owl:ObjectProperty .
+
+s4grid:relatedPropertyValue a owl:ObjectProperty .
+
+saref:relatesToMeasurement a owl:ObjectProperty .
+
+saref:relatesToProperty a owl:ObjectProperty .
+
+skos:broader a owl:ObjectProperty .
+
+skos:narrower a owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:hasCapturePeriod a owl:DatatypeProperty .
+
+s4grid:hasObis a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+s4grid:Clock a owl:Class .
+
+s4grid:Meter a owl:Class .
+
+s4grid:PropertyValue a owl:Class .
+
+s4grid:MeterProperty a owl:Class .
+
+s4grid:ProfileGeneric a owl:Class .
+
+saref:Measurement a owl:Class .
+
+s4grid:PowerLineProperty a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+ex:IncrementalLoadProfile1234 a s4grid:ProfileGeneric,
+        owl:NamedIndividual ;
+    s4grid:hasCapturePeriod "60"^^xsd:unsignedLong ;
+    s4grid:hasObis "1-0:99.1.0.255"^^xsd:string ;
+    s4grid:relatedClock ex:Clock1234 ;
+    s4grid:relatedMeasurement ex:Measurement1,
+        ex:Measurement2,
+        ex:Measurement3,
+        ex:Measurement4,
+        ex:Measurement5,
+        ex:Measurement6 ;
+    s4grid:relatedPropertyValue ex:PropertyValue1 .
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+	s4grid:hasProfileGeneric ex:IncrementalLoadProfile1234 .
+
+s4grid:ReactiveEnergy a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+    skos:narrower ex:TotalIncrementalReactiveEnergyQI1234,
+			ex:TotalIncrementalReactiveEnergyQII1234,
+			ex:TotalIncrementalReactiveEnergyQIII1234,
+			ex:TotalIncrementalReactiveEnergyQIV1234 .
+
+ex:TotalIncrementalReactiveEnergyQI1234 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+	saref:relatesToMeasurement ex:Measurement3 ;
+    skos:broader s4grid:ReactiveEnergy .
+
+ex:TotalIncrementalReactiveEnergyQII1234 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+	saref:relatesToMeasurement ex:Measurement4 ;
+    skos:broader s4grid:ReactiveEnergy .
+
+ex:TotalIncrementalReactiveEnergyQIII1234 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+	saref:relatesToMeasurement ex:Measurement5 ;
+    skos:broader s4grid:ReactiveEnergy .
+
+ex:TotalIncrementalReactiveEnergyQIV1234 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+	saref:relatesToMeasurement ex:Measurement6 ;
+    skos:broader s4grid:ReactiveEnergy .
+
+s4grid:ActiveEnergy a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+    skos:narrower ex:TotalIncrementalActiveEnergyImport1234,
+			ex:TotalIncrementalActiveEnergyExport1234 .
+
+ex:Clock1234 a s4grid:Clock,
+        owl:NamedIndividual .
+
+ex:Measurement1 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:relatesToProperty ex:TotalIncrementalActiveEnergyImport1234 .
+
+ex:Measurement2 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:relatesToProperty ex:TotalIncrementalActiveEnergyExport1234 .
+
+ex:Measurement3 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:relatesToProperty ex:TotalIncrementalReactiveEnergyQI1234 .
+
+ex:Measurement4 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:relatesToProperty ex:TotalIncrementalReactiveEnergyQII1234 .
+
+ex:Measurement5 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:relatesToProperty ex:TotalIncrementalReactiveEnergyQIII1234 .
+
+ex:Measurement6 a saref:Measurement,
+        owl:NamedIndividual ;
+    saref:relatesToProperty ex:TotalIncrementalReactiveEnergyQIV1234 .
+
+s4grid:ProfileStatus a s4grid:MeterProperty,
+        owl:NamedIndividual ;
+    skos:narrower ex:AMRStatusLoadProfilePeriod1-1234 .
+
+ex:PropertyValue1 a s4grid:PropertyValue,
+        owl:NamedIndividual ;
+    s4grid:hasProperty ex:AMRStatusLoadProfilePeriod1-1234 .
+
+ex:TotalIncrementalActiveEnergyExport1234 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+	saref:relatesToMeasurement ex:Measurement2 ;
+    skos:broader s4grid:ActiveEnergy .
+
+ex:TotalIncrementalActiveEnergyImport1234 a s4grid:PowerLineProperty,
+        owl:NamedIndividual ;
+    saref:relatesToMeasurement ex:Measurement1 ;
+	skos:broader s4grid:ActiveEnergy .
+
+ex:AMRStatusLoadProfilePeriod1-1234 a s4grid:MeterProperty,
+        owl:NamedIndividual ;
+    skos:broader s4grid:ProfileStatus .

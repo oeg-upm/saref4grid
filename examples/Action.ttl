@@ -1,0 +1,96 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/Action/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/Action#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Action"@en ;
+  dcterms:description "Example Action"@en .
+ 
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+oneM2M:hasService a owl:ObjectProperty .
+
+oneM2M:hasOperation a owl:ObjectProperty .
+
+oneM2M:hasInput a owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:obtainInputFromObis a owl:DatatypeProperty .
+
+s4grid:hasActionValue a owl:DatatypeProperty .
+
+s4grid:hasPresetTime a owl:DatatypeProperty .
+
+s4grid:hasValidityIntervalStart a owl:DatatypeProperty .
+
+s4grid:hasValidityIntervalEnd a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+s4grid:Meter a owl:Class .
+
+s4grid:ActionService a owl:Class .
+
+s4grid:ActionOperation a owl:Class .
+
+s4grid:SimpleActionOperationInput a owl:Class .
+
+s4grid:PresetAdjustingTime a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+    oneM2M:hasService ex:ResetServiceRegister,
+			ex:PresetAdjustingTimeServiceClock .
+
+ex:ResetServiceRegister a s4grid:ActionService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:ResetServiceOperation .
+
+ex:ResetServiceOperation a s4grid:ActionOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:ResetServiceOperationInput .
+
+ex:ResetServiceOperationInput a s4grid:SimpleActionOperationInput,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "0-1:94.34.1.255"^^xsd:string ;
+	s4grid:hasActionValue "0"^^xsd:int .
+
+ex:PresetAdjustingTimeServiceClock a s4grid:ActionService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:PresetAdjustingTimeOperation .
+
+ex:PresetAdjustingTimeOperation a s4grid:ActionOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:PresetAdjustingTime1 .
+
+ex:PresetAdjustingTime1 a s4grid:PresetAdjustingTime,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "0-0:1.0.0.255"^^xsd:string ;
+	s4grid:hasPresetTime "2023-05-30T09:00:00"^^xsd:dateTime ;
+	s4grid:hasValidityIntervalStart "2023-05-30T10:00:00"^^xsd:dateTime ;
+	s4grid:hasValidityIntervalEnd "2023-05-30T12:00:00"^^xsd:dateTime .

@@ -1,0 +1,127 @@
+Id;Category;Requirement
+GRID-1;Remote management of meters;A meter stores manufacturer information
+GRID-2;Remote management of meters;A meter stores screen display information
+GRID-3;Remote management of meters;A meter stores a voltage ratio
+GRID-4;Remote management of meters;A meter stores a current ratio
+GRID-5;Remote management of meters;A meter has a firmware
+GRID-6;Remote management of meters;A meter stores network information
+GRID-7;Remote management of meters;A meter can send its manufacturer information
+GRID-8;Remote management of meters;A meter can modify and send its network information
+GRID-9;Remote management of meters;A meter can modify and send its voltage ratio
+GRID-10;Remote management of meters;A meter can modify and send its current ratio
+GRID-11;Remote management of meters;A meter can modify and send its display information
+GRID-12;Remote management of meters;A meter can update its firmware
+GRID-13;Remote management of meters;A meter can reconnect or disconnect a client to the electrical network
+GRID-14;Remote management of meters;A meter has a power threshold
+GRID-15;Remote management of meters;A power threshold is measured as a percentage
+GRID-16;Remote management of meters;A meter stores reconnect or disconnect requests scheduled for a specific time
+GRID-17;Remote management of meters;A meter can be instantly disconnected/reconnected to the low voltage network
+GRID-18;Remote management of meters;A meter can be scheduled to be disconnected/reconnected to the low voltage network at a given time
+GRID-19;Remote management of meters;A meter has different types of contracts
+GRID-20;Remote management of meters;A contract has an activity calendar
+GRID-21;Remote management of meters;A contract has a power limit
+GRID-22;Remote management of meters;The power limit of a contract can be disabled
+GRID-23;Remote management of meters;The power limit of a contract is measured in watts (W)
+GRID-24;Remote management of meters;A meter can modify the power limit of a contract
+GRID-25;Remote management of meters;A meter can modify the activity calendar of a contract
+GRID-26;Remote management of meters;A meter measures the active energy import in each phase
+GRID-27;Remote management of meters;A meter measures the active energy export in each phase
+GRID-28;Remote management of meters;Active energy is measured in watt hour (Wh) or kilowatt hour (kWh)
+GRID-29;Remote management of meters;A meter measures different types of reactive energy in each phase
+GRID-30;Remote management of meters;Reactive energy is measured in volt-ampere reactive hour (VArh) or kilovolt-ampere reactive hour (kVArh)
+GRID-31;Remote management of meters;A meter stores incremental and absolute values for each active and reactive energy measure
+GRID-32;Remote management of meters;A meter stores a timestamp for each active and reactive energy measure
+GRID-33;Remote management of meters;A meter can send an hourly incremental load profile
+GRID-34;Remote management of meters;An hourly incremental load profile is represented by the incremental values of the measures performed by the meter each hour
+GRID-35;Remote management of meters;A meter can send a reduced hourly incremental load profile
+GRID-36;Remote management of meters;A reduced hourly incremental load profile is represented by the incremental active energy values measured by the meter each hour
+GRID-37;Remote management of meters;A meter can send a daily billing values profile
+GRID-38;Remote management of meters;A daily billing values profile is represented by the absolute values of the measures performed by the meter each day
+GRID-39;Remote management of meters;A meter can send a monthly billing values profile
+GRID-40;Remote management of meters;A monthly billing values profile is represented by the absolute and incremental values of the measures performed by the meter each month
+GRID-41;Remote management of meters;A meter has a threshold for voltage sags, voltage swells, and long power failures
+GRID-42;Remote management of meters;Thresholds are measured as percentages
+GRID-43;Remote management of meters;A meter has a time threshold for voltage sags, voltage swells, and long power failures
+GRID-44;Remote management of meters;Time thresholds are measured in seconds
+GRID-45;Remote management of meters;A meter stores the number of voltage swells, voltage sags, and long power failures that occur in each phase
+GRID-46;Remote management of meters;A meter stores the duration of each voltage swell, voltage sag, and long power failure that occurs in each phase
+GRID-47;Remote management of meters;Durations are measured in seconds
+GRID-48;Remote management of meters;A meter can send a voltage failure report
+GRID-49;Remote management of meters;A voltage failure report is represented by the time threshold, number, and duration of the long power failures in each phase
+GRID-50;Remote management of meters;A meter can send a power quality report
+GRID-51;Remote management of meters;A power quality report is represented by the number and duration of voltage swells, voltage sags, and long power failures in each phase
+GRID-52;Management of tertiary sensor devices;A data concentrator manages a set of meters
+GRID-53;Management of tertiary sensor devices;A data concentrator stores the identifier of the meters it manages
+GRID-54;Management of tertiary sensor devices;A data concentrator collects information from the meters it manages
+GRID-55;Management of tertiary sensor devices;A data concentrator stores manufacturer information
+GRID-56;Management of tertiary sensor devices;A data concentrator has a firmware
+GRID-57;Management of tertiary sensor devices;A data concentrator stores network information
+GRID-58;Management of tertiary sensor devices;A data concentrator stores tasks configuration
+GRID-59;Management of tertiary sensor devices;A data concentrator stores data collection configuration
+GRID-60;Management of tertiary sensor devices;A data concentrator can stop managing a meter
+GRID-61;Management of tertiary sensor devices;A data concentrator can update its firmware
+GRID-62;Management of tertiary sensor devices;A data concentrator can receive an order to execute a task at the moment
+GRID-63;Management of tertiary sensor devices;A data concentrator can receive an order to execute a scheduled task
+GRID-64;Management of tertiary sensor devices;A data concentrator can modify its network information
+GRID-65;Management of tertiary sensor devices;A data concentrator can send its task configuration
+GRID-66;Management of tertiary sensor devices;A data concentrator can send the identifier of the meters that it manages
+GRID-67;Management of tertiary sensor devices;A data concentrator can send its collect configuration
+GRID-68;Management of tertiary sensor devices;A data concentrator can send its network information
+GRID-69;Management of tertiary sensor devices;A data concentrator can generate a daily communication report
+GRID-70;Management of tertiary sensor devices;A data concentrator can generate an hourly communication report
+GRID-71;Management of tertiary sensor devices;A data concentrator can generate a performance report with information about the tasks in progress
+GRID-72;Management of tertiary sensor devices;A data concentrator can generate a performance report with historical information about the finished tasks
+GRID-73;Management of tertiary sensor devices;A data concentrator can generate a performance report with information about scheduled tasks
+GRID-74;Management of tertiary sensor devices;A data concentrator can generate a maintenance report with information about firmware updates performed in the meters that it manages
+GRID-75;Management of tertiary sensor devices;A data concentrator can generate a historical quality report
+GRID-76;Management of tertiary sensor devices;A data concentrator can generate a historical maintenance report with information about the parameters modified in the concentrator
+GRID-77;Management of tertiary sensor devices;A line supervision card stores manufacturer information
+GRID-78;Management of tertiary sensor devices;A line supervision card has a firmware
+GRID-79;Management of tertiary sensor devices;A line supervision card stores communication information
+GRID-80;Management of tertiary sensor devices;A line supervision card can send its manufacturer information
+GRID-81;Management of tertiary sensor devices;A line supervision card can send its firmware information
+GRID-82;Management of tertiary sensor devices;A line supervision card can update its firmware
+GRID-83;Management of tertiary sensor devices;A line supervision card can send its communication information
+GRID-84;Management of tertiary sensor devices;A line supervision card can modify its communication information
+GRID-85;Management of tertiary sensor devices;A remote terminal unit manages a set of line supervision cards
+GRID-86;Management of tertiary sensor devices;A remote terminal unit stores the identifier of the line supervision cards that it manages
+GRID-87;Management of tertiary sensor devices;A remote terminal unit collects information from the line supervision cards that it manages
+GRID-88;Management of tertiary sensor devices;A remote terminal unit stores manufacturer information
+GRID-89;Management of tertiary sensor devices;A remote terminal unit has a firmware
+GRID-90;Management of tertiary sensor devices;A remote terminal unit stores its task configuration
+GRID-91;Management of tertiary sensor devices;A remote terminal unit stores its data collection configuration
+GRID-92;Management of tertiary sensor devices;A remote terminal can stop managing a line supervision card
+GRID-93;Management of tertiary sensor devices;A remote terminal can modify its dynamic parameters
+GRID-94;Management of tertiary sensor devices;A remote terminal can send its dynamic and static parameters
+GRID-95;Management of tertiary sensor devices;A remote terminal unit can update its firmware
+GRID-96;Management of tertiary sensor devices;A remote terminal unit can send it task schedule
+GRID-97;Management of tertiary sensor devices;A remote terminal unit can send its event information
+GRID-98;Management of tertiary sensor devices;A remote terminal unit can send the identifier of the line supervision cards it manages
+GRID-99;Management of OLTC transformers;A meter stores each second the voltage, current and power measured in each phase
+GRID-100;Management of OLTC transformers;A line supervision card stores each second the voltage, current and the active and reactive power measured in each phase
+GRID-101;Management of OLTC transformers;A meter stores each second the voltage amplitude measured in each phase
+GRID-102;Management of OLTC transformers;A remote terminal unit stores each second the voltage amplitude measured in each phase
+GRID-103;Management of OLTC transformers;A meter can send an instantaneous values profile
+GRID-104;Management of OLTC transformers;An instantaneous values profile is represented by the instant data values that the meter measures
+GRID-105;Management of OLTC transformers;A meter can send a voltage and current profile
+GRID-106;Management of OLTC transformers;A voltage and current profile is represented by the average voltage/current/power measured in each phase over a period of time
+GRID-107;Management of OLTC transformers;A meter can send an extended voltage profile
+GRID-108;Management of OLTC transformers;An extended voltage profile is represented by the average voltage/current/power measured in each phase during a period of time and the maximum and minimum values registered in that period per phase
+GRID-109;Management of OLTC transformers;A meter can send an hourly instantaneous values profile
+GRID-110;Management of OLTC transformers;An hourly instantaneous values profile is represented by the instant data values measured in a meter each hour
+GRID-111;Management of OLTC transformers;A meter can send a voltage profile
+GRID-112;Management of OLTC transformers;A voltage profile is represented by the average, maximum, and minimum values of the voltage measured in each phase over a period of time
+GRID-113;Management of OLTC transformers;A line supervision card can send a real time values report
+GRID-114;Management of OLTC transformers;A real-time values report is represented by the voltage/current/active and reactive power magnitudes measured in each phase
+GRID-115;Management of OLTC transformers;A line supervision card can send an average voltage and current profile
+GRID-116;Management of OLTC transformers;An average voltage and current profile is represented by the average voltage/current/active and reactive power magnitudes measured in each phase over a period of time
+GRID-117;Management of OLTC transformers;A meter can send a voltage amplitude profile
+GRID-118;Management of OLTC transformers;A remote terminal unit can send a voltage amplitude profile
+GRID-119;Management of OLTC transformers;A voltage amplitude profile is represented by the average voltage amplitude measured in each phase during a period of time
+GRID-120;Detection of meters connectivity;Clients are connected to the electrical network through meters
+GRID-121;Detection of meters connectivity;Meters store the actual connectivity data
+GRID-122;Detection of meters connectivity;Meters store a register of connectivity data
+GRID-123;Detection of meters connectivity;Meters can send its connectivity data
+GRID-124;Detection of meters connectivity;A line supervision card can send an instantaneous current profile
+GRID-125;Detection of meters connectivity;An instantaneous current profile is represented by the current measured in each phase at each second
+GRID-126;Detection of meters connectivity;Meters can send its register of connectivity data

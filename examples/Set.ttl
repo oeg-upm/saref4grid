@@ -1,0 +1,110 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/Set/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/Set#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Set"@en ;
+  dcterms:description "Example Set"@en .
+ 
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+oneM2M:hasService a owl:ObjectProperty .
+
+oneM2M:hasOperation a owl:ObjectProperty .
+
+oneM2M:hasInput a owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:obtainInputFromObis a owl:DatatypeProperty .
+
+s4grid:hasInputObjectType a owl:DatatypeProperty .
+
+s4grid:obtainInputForProperty a owl:DatatypeProperty .
+
+s4grid:hasInputDataType a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+s4grid:Meter a owl:Class .
+
+s4grid:SetService a owl:Class .
+
+s4grid:SetOperation a owl:Class .
+
+s4grid:SetOperationObisInput a owl:Class .
+
+s4grid:SetOperationObjectInput a owl:Class .
+
+s4grid:SetOperationDataInput a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+    oneM2M:hasService ex:SetMulticastCommunicationIdentifier,
+			ex:SetServiceCapturePeriodIncrementalLoadProfile,
+			ex:SetServiceDisconnectionScript .
+
+ex:SetMulticastCommunicationIdentifier a s4grid:SetService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:SetOperationMulticastCommunicationIdentifier .
+
+ex:SetOperationMulticastCommunicationIdentifier a s4grid:SetOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:InputMulticastCommunicationIdentifier .
+
+ex:InputMulticastCommunicationIdentifier a s4grid:SetOperationObisInput,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "0-0:96.1.5.255"^^xsd:string ;
+	s4grid:hasInputObjectType "s4grid:PropertyValue"^^xsd:string .
+
+ex:SetServiceCapturePeriodIncrementalLoadProfile a s4grid:SetService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:SetOperationCapturePeriodIncrementalLoadProfile .
+
+ex:SetOperationCapturePeriodIncrementalLoadProfile a s4grid:SetOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:InputCapturePeriodIncrementalLoadProfile .
+
+ex:InputCapturePeriodIncrementalLoadProfile a s4grid:SetOperationDataInput,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "1-0:99.1.0.255"^^xsd:string ;
+	s4grid:obtainInputForProperty "s4grid:hasCapturePeriod"^^xsd:string ;
+	s4grid:hasInputDataType "xsd:unsignedLong"^^xsd:string .
+
+ex:SetServiceDisconnectionScript a s4grid:SetService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:SetOperationDisconnectionScript .
+
+ex:SetOperationDisconnectionScript a s4grid:SetOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:InputDisconnectionScript .
+
+ex:InputDisconnectionScript a s4grid:SetOperationObjectInput,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "0-0:10.0.196.255"^^xsd:string ;
+	s4grid:obtainInputForProperty "s4grid:storesScript"^^xsd:string ;
+	s4grid:hasInputObjectType "s4grid:Script"^^xsd:string .

@@ -1,0 +1,96 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/PropertyValues/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2008/05/skos#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2> .
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/PropertyValues#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Property Value"@en ;
+  dcterms:description "Example Property Value"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+s4grid:hasPropertyValue a owl:ObjectProperty .
+
+s4grid:hasProperty a owl:ObjectProperty .
+
+s4grid:hasUnit a owl:ObjectProperty .
+
+skos:broader a owl:ObjectProperty .
+
+skos:narrower a owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:hasObis a owl:DatatypeProperty .
+
+s4grid:hasValue a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+saref:UnitOfMeasure a owl:Class .
+
+s4grid:Meter a owl:Class .
+
+s4grid:PropertyValue a owl:Class .
+
+s4grid:MeterProperty a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+    s4grid:hasPropertyValue ex:PropertyValue234,
+		ex:PropertyValue678.
+
+ex:PropertyValue678 a s4grid:PropertyValue,
+        owl:NamedIndividual ;
+    s4grid:hasProperty ex:MulticastCommunicationIdentifier ;
+    s4grid:hasValue "224.0.1.0"^^xsd:string .
+
+ex:ActivePowerLimitContract1TariffPeriod1 a s4grid:MeterProperty,
+        owl:NamedIndividual ;
+    s4grid:hasObis "0-1:94.34.1.255"^^xsd:string ;
+	skos:broader s4grid:PowerLimit .
+
+s4grid:Network a s4grid:MeterProperty,
+        owl:NamedIndividual ;
+    skos:narrower ex:MulticastCommunicationIdentifier .
+
+om:watt a saref:UnitOfMeasure,
+        owl:NamedIndividual .
+
+ex:PropertyValue234 a s4grid:PropertyValue,
+        owl:NamedIndividual ;
+    s4grid:hasProperty ex:ActivePowerLimitContract1TariffPeriod1 ;
+    s4grid:hasValue "1200"^^xsd:int ;
+	s4grid:hasUnit om:watt .
+	
+s4grid:PowerLimit a s4grid:MeterProperty,
+		owl:NamedIndividual ;
+	skos:narrower ex:ActivePowerLimitContract1TariffPeriod1 .
+
+ex:MulticastCommunicationIdentifier a s4grid:MeterProperty,
+        owl:NamedIndividual ;
+    s4grid:hasObis "0-0:96.1.5.255"^^xsd:string ;
+    skos:broader s4grid:Network .

@@ -1,0 +1,63 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/ConnectivityState/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/ConnectivityState#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Connectivity State"@en ;
+  dcterms:description "Example Connectivity State"@en .
+
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+saref:hasState a owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:hasControlMode a owl:DatatypeProperty .
+
+s4grid:hasControlState a owl:DatatypeProperty .
+
+s4grid:hasObis a owl:DatatypeProperty .
+
+s4grid:hasOutputState a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+s4grid:ConnectivityState a owl:Class .
+
+s4grid:Meter a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+    saref:hasState ex:CurrentConnectivityState .
+
+ex:CurrentConnectivityState a s4grid:ConnectivityState,
+        owl:NamedIndividual ;
+    s4grid:hasControlMode "1"^^xsd:int ;
+    s4grid:hasControlState "1"^^xsd:int ;
+    s4grid:hasObis "0-0:10.0.196.255"^^xsd:string ;
+    s4grid:hasOutputState "True"^^xsd:boolean .

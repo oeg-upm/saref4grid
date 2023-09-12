@@ -1,0 +1,56 @@
+@prefix ex: <https://saref.etsi.org/saref4grid/v1.0.0/example/NetworkInterface/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oneM2M: <http://www.owl-ontologies.com/oneM2M#> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix s4grid: <https://saref.etsi.org/saref4grid/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://saref.etsi.org/saref4grid/v1.0.0/example/NetworkInterface#> a dctype:Dataset ;
+  dcterms:license <https://forge.etsi.org/etsi-software-license> ;
+  dcterms:conformsTo <https://saref.etsi.org/saref4grid/v1.0.0/> ;
+  dcterms:title "Example Network Interface"@en ;
+  dcterms:description "Example Network Interface"@en .
+
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+s4grid:hasNetworkInterface a owl:ObjectProperty .
+	
+
+#################################################################
+#    Data properties
+#################################################################
+
+s4grid:hasMACAddress a owl:DatatypeProperty .
+
+s4grid:hasObis a owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+s4grid:Meter a owl:Class .
+
+s4grid:NetworkInterface a owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+ex:Meter1234 a s4grid:Meter,
+        owl:NamedIndividual ;
+    s4grid:hasNetworkInterface ex:MacAddress1234 .
+
+ex:MacAddress1234 a s4grid:NetworkInterface,
+        owl:NamedIndividual ;
+    s4grid:hasMACAddress "00:1B:44:11:3A:B7"^^xsd:string ;
+    s4grid:hasObis "0-0:28.6.0.255"^^xsd:string .

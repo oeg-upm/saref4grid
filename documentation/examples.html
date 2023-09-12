@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="images.css">
+</head>
+<body>
+	<p>The example presented in <a href="#Figure_19">Figure 19</a> depicts an electric grid meter (ex:Meter1234). It can be described by a set of meter properties 
+	  (e.g., ex:MulticastCommunicationIdentifier) which are identified by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>). 
+	  The meter properties used to describe a meter are broader than the properties shown in Figure 6 (e.g., <a href="#s4grid:Network">s4grid:Network</a>).
+	   Notice that some meter properties do not specify a unit of measure.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_meter_1.png"><img src="diagrams/SAREF4GRID_Example_meter_1.png" alt="Example of electric grid meter information I"/></a>
+	  <figcaption id="Figure_19">Figure 19: Example of electric grid meter information I</figcaption>
+	</figure>
+
+
+	<p>The example presented in <a href="#Figure_20">Figure 20</a> depicts an electric grid meter (ex:Meter1234). It can be described by a set of meter properties 
+	  (e.g., ex:ActivePowerLimitContract1TariffPeriod1) which are identified by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>). 
+	  The meter properties used to describe a meter are broader than the properties shown in Figure 6 (e.g., <a href="#s4grid:PowerLimit">s4grid:PowerLimit</a>). 
+	  Notice that some meter properties specify a unit of measure (e.g., <a href="http://www.ontology-of-units-of-measure.org/resource/om-2/watt">om:watt</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_meter_2.png"><img src="diagrams/SAREF4GRID_Example_meter_2.png" alt="Example of electric grid meter information II"/></a>
+	  <figcaption id="Figure_20">Figure 20: Example of electric grid meter information II</figcaption>
+	</figure>
+
+
+	<p>Unlike other SAREF extensions, a meter firmware is not defined by a datatype property. The example presented in <a href="#Figure_21">Figure 21</a> depicts a meter 
+	  firmware (e.g., ex:ActivePLCFirmware) which is represented by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_firmware.png"><img src="diagrams/SAREF4GRID_Example_firmware.png" alt="Example of electric grid meter firmware"/></a>
+	  <figcaption id="Figure_21">Figure 21: Example of electric grid meter firmware</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_22">Figure 22</a> contains an example of a network interface (ex:MacAddress1234) defined for a meter. Moreover, 
+	  the network interface is represented by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_network_interface.png"><img src="diagrams/SAREF4GRID_Example_network_interface.png" alt="Example of electric grid meter network interface"/></a>
+	  <figcaption id="Figure_22">Figure 22: Example of electric grid meter network interface</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_23">Figure 23</a> contains an example of a meter clock (ex:Clock1234). Moreover, the network 
+	  interface is represented by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>). Notice that the clock is not only represented by a time (<a href="#s4grid:hasTime">s4grid:hasTime</a>), 
+	  but is also represented by the time zone in which it is located and how the time is changed.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_clock.png"><img src="diagrams/SAREF4GRID_Example_clock.png" alt="Example of electric grid meter clock"/></a>
+	  <figcaption id="Figure_23">Figure 23: Example of electric grid meter clock</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_24">Figure 24</a> contains an example of a meter connectivity state (<a href="#s4grid:CurrentConnectivityState">s4grid:CurrentConnectivityState</a>). 
+	  In this example, it is represented that the meter is physical connected (<a href="#s4grid:hasOutputState">s4grid:hasOutputState</a>), internal connected (<a href="#s4grid:hasControlState">s4grid:hasControlState</a>) 
+	  and it can be disconnected remotely, manually and locally (<a href="#s4grid:hasControlMode">s4grid:hasControlMode</a>). Moreover, the network interface is represented by 
+	  an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_connectivity_state.png"><img src="diagrams/SAREF4GRID_Example_connectivity_state.png" alt="Example of electric grid meter connectivity state"/></a>
+	  <figcaption id="Figure_24">Figure 24: Example of electric grid meter connectivity state</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_25">Figure 25</a> contains an example of how scripts (ex:ConnectionScript and ex:DisconnectionScript) are stored in the meter. 
+	  A script table (ex:DisconnectScriptTable) is needed in order to represents where the scripts are located. Moreover, a single schedule action 
+	  (ex:DisconnectScheduleAction) it is used to represent that a script is going to be executed in a determined date. Moreover, the network 
+	  interface and single schedule action are represented by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_script.png"><img src="diagrams/SAREF4GRID_Example_script.png" alt="Example of electric grid meter script table and schedule action"/></a>
+	  <figcaption id="Figure_25">Figure 25: Example of electric grid meter script table and schedule action</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_26">Figure 26</a> contains an example of how an activity calendar (ex:ActivityCalendarContract1-1234) is represented in a meter. 
+	  This activity calendar is represented by an active season (ex:SeasonActive1) which is described by the date at which it starts and two regular 
+	  day profiles: one that describes working days (ex:WeekDay) and other that describes weekend days (ex:WeekendDay). Each day profile is represented by 
+	  when a billing period starts each day (ex:WeekDayTariffPeriod1 and ex:WeekendDayTariffPeriod1) and what scripts to execute to make the 
+	  billing (ex:ResetBillingPeriod1 and ex:ResetBillingPeriod2). Additionally, a special day profile (ex:SpecialTariffPeriod1) 
+	  defines in which day a working day is festive, and therefore, another tariffication is going to be applied. Moreover, the activity calendar 
+	  is represented by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>). Notice that just the active calendar is represented 
+	  (e.g., the passive calendar associated to the active calendar is not represented) in order to not make the example more complicated.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_activity_calendar.png"><img src="diagrams/SAREF4GRID_Example_activity_calendar.png" alt="Example of electric grid meter activity calendar"/></a>
+	  <figcaption id="Figure_26">Figure 26: Example of electric grid meter activity calendar</figcaption>
+	</figure>
+
+
+	<p>One of the main functions of electric grid meters is to take measures from a power line in order to control 
+	  what is happening in the electric grid. <a href="#Figure_27">Figure 27</a> presents an example of a power line measurement (ex:TotalIncrementalActiveEnergyImportMeasurement123) 
+	  for a power line property (ex:TotalIncrementalActiveEnergyImport) which are identified by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>). The power line properties 
+	  are broader than the properties shown in Figure 14 (e.g., <a href="#s4grid:ActiveEnergy">s4grid:ActiveEnergy</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_measurement_1.png"><img src="diagrams/SAREF4GRID_Example_measurement_1.png" alt="Example of electric grid meter measurements I"/></a>
+	  <figcaption id="Figure_27">Figure 27: Example of electric grid meter measurements I</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_28">Figure 28</a> presents another example of a power line measurement (ex:MaximumDemandRegisterImportC1TP1Measurement136) for a power line property 
+	  (ex:MaximumDemandRegisterImport) which are identified by an OBIS code (<a href="#s4grid:hasObis">s4grid:hasObis</a>). The power line properties are broader than the properties 
+	  shown in Figure 14 (e.g., <a href="#s4grid:DemandRegister">s4grid:DemandRegister</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_measurement_2.png"><img src="diagrams/SAREF4GRID_Example_measurement_2.png" alt="Example of electric grid meter measurements II"/></a>
+	  <figcaption id="Figure_28">Figure 28: Example of electric grid meter measurements II</figcaption>
+	</figure>
+
+
+	<p>Different profile generics can be generated in order to access data groups which are stored in an electric grid meter. 
+	  <a href="#Figure_29">Figure 29</a> presents an example of a profile generic (ex:IncrementalLoadProfile1234) whose objective is to store the incremental energy 
+	  values that a meter measures (ex:Measurement1, ex:Measurement2, ex:Measurement3, ex:Measurement4, ex:Measurement5 and ex:Measurement6) 
+	  each hour. Additionally, the profile generic stores the clock (ex:Clock1234) in order to indicate the time at which the profile generic 
+	  capture elements, and the AMR status (ex:PropertyValue1) that the meter stores. Moreover, the profile generic is represented by an OBIS code 
+	  (<a href="#s4grid:hasObis">s4grid:hasObis</a>).</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_profile.png"><img src="diagrams/SAREF4GRID_Example_profile.png" alt="Example of electric grid meter profile generic"/></a>
+	  <figcaption id="Figure_29">Figure 29: Example of electric grid meter profile generic</figcaption>
+	</figure>
+
+	<p>Each element that a meter stores can be obtained through a get service. <a href="#Figure_30">Figure 30</a> presents an example of how it is specified 
+	  that a COSEM element is going to be obtained. A get service (ex:GetServiceIncrementalLoadProfile) is executed through a get operation 
+	  (ex:GetOperationIncrementalLoadProfile). This operation indicates the desired input (ex:OperationInputIncrementalLoadProfile), 
+	  which in this case it specifies the element from which data is going to be retrieved, and the desired output 
+	  (ex:OutputIncrementalLoadProfile), which in this case specifies the data structure that is going to be given.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_get_1.png"><img src="diagrams/SAREF4GRID_Example_get_1.png" alt="Example of electric grid meter get service I"/></a>
+	  <figcaption id="Figure_30">Figure 30: Example of electric grid meter get service I</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_31">Figure 31</a> presents an example of how it is specified that an attribute of a COSEM element is going to be obtained. Notice that in 
+	  this example, the attribute corresponds to a datatype property of the SAREF4GRID ontology. A get service 
+	  (ex:GetServiceCapturePeriodIncrementalLoadProfile) is executed through a get operation 
+	  (ex:GetOperationCapturePeriodIncrementalLoadProfile). This operation indicates the desired input 
+	  (ex:OperationInputCapturePeriodIncrementalLoadProfile), which in this case it specifies the datatype property of the element 
+	  from which data is going to be retrieved, and the desired output (ex:OutputCapturePeriodIncrementalLoadProfile), which in this
+	   case specifies the datatype that is going to be given.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_get_2.png"><img src="diagrams/SAREF4GRID_Example_get_2.png" alt="Example of electric grid meter get service II"/></a>
+	  <figcaption id="Figure_31">Figure 31: Example of electric grid meter get service II</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_32">Figure 32</a> presents an example of how it is specified that an attribute of a COSEM element is going to be obtained. Notice that in this example, the attribute corresponds to an object property of the SAREF4GRID ontology. A get service (ex:GetServiceDisconnectionScript) is executed through a get operation (ex: GetOperationDisconnectionScript). This operation indicates the desired input (ex:OperationInputDisconnectionScript), which in this case it specifies the object property of the element from which data is going to be retrieved, and the desired output (ex:OutpuDisconnectionScript), which in this case specifies the data structure that is going to be given.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_get_3.png"><img src="diagrams/SAREF4GRID_Example_get_3.png" alt="Example of electric grid meter get service III"/></a>
+	  <figcaption id="Figure_32">Figure 32: Example of electric grid meter get service III</figcaption>
+	</figure>
+
+	<p>Each element that a meter stores can be modified through a set service. <a href="#Figure_33">Figure 33</a> presents an example of how it is specified that a COSEM element is going to be modified. A set service (ex:SetMulticastCommunicationIdentifier) is executed through a set operation (ex:SetOperationMulticastCommunicationIdentifier). This operation indicates the desired input (ex:InputMulticastCommunicationIdentifier), which in this case it specifies the element from which data is going to be modified and the data structure that is going to replace the previous data.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_set_1.png"><img src="diagrams/SAREF4GRID_Example_set_1.png" alt="Example of electric grid meter set service I"/></a>
+	  <figcaption id="Figure_33">Figure 33: Example of electric grid meter set service I</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_34">Figure 34</a> presents an example of how it is specified that an attribute of a COSEM element is going to be modified. Notice that in this example, the attribute corresponds to a datatype property of the SAREF4GRID ontology. A set service (ex:SetServiceCapturePeriodIncrementalLoadProfile) is executed through a set operation (ex:SetOperationCapturePeriodIncrementalLoadProfile). This operation indicates the desired input (ex:InputICapturePeriodIncrementalLoadProfile), which in this case it specifies the datatype property of the element from which data is going to be modified and the data type that is going to replace the previous data.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_set_2.png"><img src="diagrams/SAREF4GRID_Example_set_2.png" alt="Example of electric grid meter set service II"/></a>
+	  <figcaption id="Figure_34">Figure 34: Example of electric grid meter set service II</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_35">Figure 35</a> presents an example of how it is specified that an attribute of a COSEM element is going to be modified. Notice that in this example, the attribute corresponds to an object property of the SAREF4GRID ontology. A set service (ex:SetServiceDisconnectionScript) is executed through a set operation (ex:SetOperationDisconnectionScript). This operation indicates the desired input (ex:InputIDisconnectionScript), which in this case it specifies the object property of the element from which data is going to be modified and the data structure that is going to replace the previous data.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_set_3.png"><img src="diagrams/SAREF4GRID_Example_set_3.png" alt="Example of electric grid meter set service III"/></a>
+	  <figcaption id="Figure_35">Figure 35: Example of electric grid meter set service III</figcaption>
+	</figure>
+
+
+	<p>Each element that a meter stores can be affected through an action service. <a href="#Figure_36">Figure 36</a> presents an example of how it is specified that a COSEM element is going to be affected by an action. Notice that in this example the input parameter needed to execute the action is simple (e.g., integer, string, etc.). An action service (ex:ResetServiceRegister) is executed through an action operation (ex:ResetServiceOperation). This operation indicates the desired input (ex:ResetServiceOperationInput), which in this case it specifies the element that is going to be affected by the action and the value of the parameter needed by the action.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_action_1.png"><img src="diagrams/SAREF4GRID_Example_action_1.png" alt="Example of electric grid meter action service I"/></a>
+	  <figcaption id="Figure_36">Figure 36: Example of electric grid meter action service I</figcaption>
+	</figure>
+
+
+	<p><a href="#Figure_37">Figure 37</a> presents an example of how it is specified that a COSEM element is going to be affected by an action. Notice that in this example the input parameter needed to execute the action is a structure. An action service (ex:PresetAdjustingTimeServiceClock) is executed through an action operation (ex:PresetAdjustingTimeOperation). This operation indicates the desired input (ex:PresetAdjustingTime1), which in this case it specifies the element that is going to be affected by the action and the values of the parameter structure needed by the action.</p>
+
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Example_action_2.png"><img src="diagrams/SAREF4GRID_Example_action_2.png" alt="Example of electric grid meter action service II"/></a>
+	  <figcaption id="Figure_37">Figure 37: Example of electric grid meter action service II</figcaption>
+	</figure>
+</body>
+</html>
