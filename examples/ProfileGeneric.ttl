@@ -75,7 +75,7 @@ s4grid:PowerLineProperty a owl:Class .
 
 ex:IncrementalLoadProfile1234 a s4grid:ProfileGeneric,
         owl:NamedIndividual ;
-    s4grid:hasCapturePeriod "60"^^xsd:unsignedLong ;
+    s4grid:hasCapturePeriod "60"^^xsd:int ;
     s4grid:hasObis "1-0:99.1.0.255"^^xsd:string ;
     s4grid:relatedClock ex:Clock1234 ;
     s4grid:relatedMeasurement ex:Measurement1,

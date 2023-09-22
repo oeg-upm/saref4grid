@@ -42,6 +42,14 @@ s4grid:obtainInputForProperty a owl:DatatypeProperty .
 
 s4grid:hasOutputDataType a owl:DatatypeProperty .
 
+s4grid:obtainFromValue a owl:DatatypeProperty .
+
+s4grid:obtainToValue a owl:DatatypeProperty .
+
+s4grid:obtainFromEntry a owl:DatatypeProperty .
+
+s4grid:obtainToEntry a owl:DatatypeProperty .
+
 
 #################################################################
 #    Classes
@@ -61,6 +69,14 @@ s4grid:GetOperationPropertyInput a owl:Class .
 
 s4grid:GetOperationDataOutput a owl:Class .
 
+s4grid:RangeDescriptor a owl:Class .
+
+s4grid:EntryDescriptor a owl:Class .
+
+s4grid:GetOperationOutput a owl:Class .
+
+s4grid:SelectiveAccess a owl:Class .
+
 
 #################################################################
 #    Individuals
@@ -70,7 +86,9 @@ ex:Meter1234 a s4grid:Meter,
         owl:NamedIndividual ;
     oneM2M:hasService ex:GetServiceIncrementalLoadProfile,
 			ex:GetServiceCapturePeriodIncrementalLoadProfile,
-			ex:GetServiceDisconnectionScript .
+			ex:GetServiceDisconnectionScript ,
+			ex:GetServiceIncrementalLoadProfileRange,
+			ex:GetServiceIncrementalLoadProfileEntry .
 
 ex:GetServiceIncrementalLoadProfile a s4grid:GetService,
         owl:NamedIndividual ;
@@ -124,3 +142,49 @@ ex:OperationInputDisconnectionScript a s4grid:GetOperationPropertyInput,
 ex:OutputDisconnectionScript a s4grid:GetOperationObjectOutput,
         owl:NamedIndividual ;
     s4grid:hasOutputObjectType "s4grid:Script"^^xsd:string .
+
+ex:GetServiceIncrementalLoadProfileRange a s4grid:GetService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:GetOperationIncrementalLoadProfileRange .
+	
+ex:GetOperationIncrementalLoadProfileRange a s4grid:GetOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:OperationInputIncrementalLoadProfileRange,
+			ex:RangeDescriptor1 ;
+	oneM2M:hasOutput ex:OutputIncrementalLoadProfileRange .
+
+ex:OperationInputIncrementalLoadProfileRange a s4grid:CosemOperationInput,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "1-0:99.1.0.255"^^xsd:string .
+
+ex:RangeDescriptor1 a s4grid:RangeDescriptor,
+        owl:NamedIndividual ;
+    s4grid:obtainFromValue "1"^^xsd:int ;
+	s4grid:obtainToValue "10"^^xsd:int .
+
+ex:OutputIncrementalLoadProfileRange a s4grid:GetOperationObjectOutput,
+        owl:NamedIndividual ;
+    s4grid:hasOutputObjectType "s4grid:ProfileGeneric"^^xsd:string .
+
+ex:GetServiceIncrementalLoadProfileEntry a s4grid:GetService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:GetOperationIncrementalLoadProfileEntry .
+	
+ex:GetOperationIncrementalLoadProfileEntry a s4grid:GetOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:OperationInputIncrementalLoadProfileEntry,
+			ex:EntryDescriptor1 ;
+	oneM2M:hasOutput ex:OutputIncrementalLoadProfileEntry .
+
+ex:OperationInputIncrementalLoadProfileEntry a s4grid:CosemOperationInput,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "1-0:99.1.0.255"^^xsd:string .
+
+ex:EntryDescriptor1 a s4grid:EntryDescriptor,
+        owl:NamedIndividual ;
+    s4grid:obtainFromEntry "1"^^xsd:int ;
+	s4grid:obtainToEntry "10"^^xsd:int .
+
+ex:OutputIncrementalLoadProfileEntry a s4grid:GetOperationObjectOutput,
+        owl:NamedIndividual ;
+    s4grid:hasOutputObjectType "s4grid:ProfileGeneric"^^xsd:string .

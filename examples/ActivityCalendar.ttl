@@ -45,6 +45,10 @@ s4grid:hasSaturdayProfile a owl:ObjectProperty .
 
 s4grid:hasSundayProfile a owl:ObjectProperty .
 
+s4grid:hasDayProfile a owl:ObjectProperty .
+
+s4grid:hasPassiveSeasonProfile a owl:ObjectProperty .
+
 
 #################################################################
 #    Data properties
@@ -84,6 +88,8 @@ s4grid:SpecialDayProfile a owl:Class .
 s4grid:DaySchedule a owl:Class .
 
 s4grid:SeasonProfile a owl:Class .
+
+s4grid:DayProfile a owl:Class .
 
 
 #################################################################

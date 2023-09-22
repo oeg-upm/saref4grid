@@ -42,6 +42,12 @@ s4grid:hasValidityIntervalStart a owl:DatatypeProperty .
 
 s4grid:hasValidityIntervalEnd a owl:DatatypeProperty .
 
+s4grid:hasIndex a owl:DatatypeProperty .
+
+s4grid:hasSpecialDate a owl:DatatypeProperty .
+
+s4grid:hasDayId a owl:DatatypeProperty .
+
 
 #################################################################
 #    Classes
@@ -57,6 +63,10 @@ s4grid:SimpleActionOperationInput a owl:Class .
 
 s4grid:PresetAdjustingTime a owl:Class .
 
+s4grid:SpecialDayEntry a owl:Class .
+
+s4grid:ComplexActionOperationInput a owl:Class .
+
 
 #################################################################
 #    Individuals
@@ -65,7 +75,8 @@ s4grid:PresetAdjustingTime a owl:Class .
 ex:Meter1234 a s4grid:Meter,
         owl:NamedIndividual ;
     oneM2M:hasService ex:ResetServiceRegister,
-			ex:PresetAdjustingTimeServiceClock .
+			ex:PresetAdjustingTimeServiceClock ,
+			ex:SpecialDayEntryActivityCalendar .
 
 ex:ResetServiceRegister a s4grid:ActionService,
         owl:NamedIndividual ;
@@ -94,3 +105,18 @@ ex:PresetAdjustingTime1 a s4grid:PresetAdjustingTime,
 	s4grid:hasPresetTime "2023-05-30T09:00:00"^^xsd:dateTime ;
 	s4grid:hasValidityIntervalStart "2023-05-30T10:00:00"^^xsd:dateTime ;
 	s4grid:hasValidityIntervalEnd "2023-05-30T12:00:00"^^xsd:dateTime .
+
+ex:SpecialDayEntryActivityCalendar a s4grid:ActionService,
+        owl:NamedIndividual ;
+    oneM2M:hasOperation ex:SpecialDayEntryOperation .
+
+ex:SpecialDayEntryOperation a s4grid:ActionOperation,
+        owl:NamedIndividual ;
+    oneM2M:hasInput ex:SpecialDayEntry1 .
+
+ex:SpecialDayEntry1 a s4grid:PresetAdjustingTime,
+        owl:NamedIndividual ;
+    s4grid:obtainInputFromObis "0-0:13.0.1.255"^^xsd:string ;
+	s4grid:hasIndex "1"^^xsd:unsignedShort ;
+	s4grid:hasSpecialDate "2023-05-30"^^xsd:date ;
+	s4grid:hasDayId "235"^^xsd:int .

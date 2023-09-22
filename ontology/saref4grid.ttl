@@ -388,7 +388,7 @@ s4grid:hasCalendarNamePassive a owl:DatatypeProperty ;
 s4grid:hasCapturePeriod a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] The capturing period of a profile generic in seconds. If its value is 0, then there is not automatic capturing; capturing is triggered externally or through capture events occur asynchronously. If its value is greater than 0, then automatic capturing is assumed"@en ;
     rdfs:label "has capture period"@en ;
-    rdfs:range xsd:unsignedLong .
+    rdfs:range xsd:int .
 
 s4grid:hasClockBase a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Defines where the basic timing information comes from: (0) not defined, (1) internal crystal, (2) mains frequency 50 Hz, (3) mains frequency 60 Hz, (4) GPS (global positioning system), (5) radio controlled"@en ;
