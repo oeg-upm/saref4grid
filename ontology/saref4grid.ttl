@@ -23,7 +23,8 @@
 	dcterms:license <https://forge.etsi.org/etsi-software-license> ;
 	dcterms:source <https://saref.etsi.org/sources/saref4grid/> ;
 	vann:preferredNamespacePrefix "s4grid" ;
-	vann:preferredNamespaceUri "https://saref.etsi.org/saref4grid/" .
+	vann:preferredNamespaceUri "https://saref.etsi.org/saref4grid/" ;
+	rdfs:comment "The development of the SAREF4GRID ontology has been partially funded by the IA4TES project (MIA.2021.M04.0008), funded by the Spanish Ministry of Economic Affairs and Digital Transformation and by the NextGenerationEU program" .
 
 
 #################################################################
