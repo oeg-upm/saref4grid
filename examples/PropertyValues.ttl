@@ -65,7 +65,7 @@ ex:Meter1234 a s4grid:Meter,
 
 ex:PropertyValue678 a s4grid:PropertyValue,
         owl:NamedIndividual ;
-    s4grid:hasProperty ex:MulticastCommunicationIdentifier ;
+    s4grid:hasProperty ex:ScrollDisplayMode ;
     s4grid:hasValue "224.0.1.0"^^xsd:string .
 
 ex:ActivePowerLimitContract1TariffPeriod1 a s4grid:MeterProperty,
@@ -73,9 +73,9 @@ ex:ActivePowerLimitContract1TariffPeriod1 a s4grid:MeterProperty,
     s4grid:hasObis "0-1:94.34.1.255"^^xsd:string ;
 	skos:broader s4grid:PowerLimit .
 
-s4grid:Network a s4grid:MeterProperty,
+s4grid:ScreenDisplay a s4grid:MeterProperty,
         owl:NamedIndividual ;
-    skos:narrower ex:MulticastCommunicationIdentifier .
+    skos:narrower ex:ScrollDisplayMode .
 
 om:watt a saref:UnitOfMeasure,
         owl:NamedIndividual .
@@ -90,7 +90,7 @@ s4grid:PowerLimit a s4grid:MeterProperty,
 		owl:NamedIndividual ;
 	skos:narrower ex:ActivePowerLimitContract1TariffPeriod1 .
 
-ex:MulticastCommunicationIdentifier a s4grid:MeterProperty,
+ex:ScrollDisplayMode a s4grid:MeterProperty,
         owl:NamedIndividual ;
-    s4grid:hasObis "0-0:96.1.5.255"^^xsd:string ;
-    skos:broader s4grid:Network .
+    s4grid:hasObis "0-0:96.1.7.255"^^xsd:string ;
+    skos:broader s4grid:ScreenDisplay .

@@ -29,6 +29,8 @@ oneM2M:hasInput a owl:ObjectProperty .
 
 oneM2M:hasOutput a owl:ObjectProperty .
 
+s4grid:hasSelectiveAccess a owl:ObjectProperty .
+
 
 #################################################################
 #    Data properties
@@ -149,8 +151,8 @@ ex:GetServiceIncrementalLoadProfileRange a s4grid:GetService,
 	
 ex:GetOperationIncrementalLoadProfileRange a s4grid:GetOperation,
         owl:NamedIndividual ;
-    oneM2M:hasInput ex:OperationInputIncrementalLoadProfileRange,
-			ex:RangeDescriptor1 ;
+    oneM2M:hasInput ex:OperationInputIncrementalLoadProfileRange ;
+	s4grid:hasSelectiveAccess ex:RangeDescriptor1 ;
 	oneM2M:hasOutput ex:OutputIncrementalLoadProfileRange .
 
 ex:OperationInputIncrementalLoadProfileRange a s4grid:CosemOperationInput,
@@ -172,8 +174,8 @@ ex:GetServiceIncrementalLoadProfileEntry a s4grid:GetService,
 	
 ex:GetOperationIncrementalLoadProfileEntry a s4grid:GetOperation,
         owl:NamedIndividual ;
-    oneM2M:hasInput ex:OperationInputIncrementalLoadProfileEntry,
-			ex:EntryDescriptor1 ;
+    oneM2M:hasInput ex:OperationInputIncrementalLoadProfileEntry ;
+	s4grid:hasSelectiveAccess ex:EntryDescriptor1 ;
 	oneM2M:hasOutput ex:OutputIncrementalLoadProfileEntry .
 
 ex:OperationInputIncrementalLoadProfileEntry a s4grid:CosemOperationInput,

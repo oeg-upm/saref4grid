@@ -280,6 +280,12 @@ s4grid:hasScriptTable a owl:ObjectProperty ;
     rdfs:domain s4grid:Meter ;
     rdfs:range s4grid:ScriptTable .
 
+s4grid:hasSelectiveAccess a owl:ObjectProperty ;
+	rdfs:comment "The selective access of a profile generic get service"@en ;
+	rdfs:label "has selective access"@en ;
+	rdfs:domain s4grid:GetOperation ;
+	rdfs:range s4grid:SelectiveAccess .
+
 s4grid:hasSingleScheduledAction a owl:ObjectProperty ;
 	rdfs:comment "The single scheduled action of a meter"@en ;
     rdfs:label "has single scheduled action"@en ;
@@ -681,9 +687,9 @@ s4grid:ComplexActionOperationInput a owl:Class ;
     rdfs:label "Complex Action Operation Input"@en ;
     rdfs:subClassOf s4grid:CosemOperationInput .
 
-s4grid:ConnectivityState a owl:Class ;
+s4grid:BreakerState a owl:Class ;
 	rdfs:comment "[COSEM] This class manages an internal or external disconnect unit of the meter (e.g. electricity breaker, gas valve) in order to connect or disconnect – partly or entirely – the premises of the consumer to / from the supply"@en ;
-    rdfs:label "Connectivity State"@en ;
+    rdfs:label "Breaker State"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty s4grid:hasOutputState ],
@@ -716,6 +722,11 @@ s4grid:DaySchedule a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty s4grid:executesScript ] .
+
+s4grid:EnergyPowerProperty a owl:Class ;
+	rdfs:comment "Class to group those properties related to the energy and power of power lines"@en ;
+    rdfs:label "Energy Power Property"@en ;
+    rdfs:subClassOf saref:Property .
 
 s4grid:EntryDescriptor a owl:Class ;
 	rdfs:comment "In the case of a get service of a profile generic class a selective access can be specified. This indicates the range of entries to be retrieved from the profile generic class"@en ;
@@ -801,11 +812,6 @@ s4grid:NetworkInterface a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty s4grid:hasMACAddress ] .
-
-s4grid:PowerLineProperty a owl:Class ;
-	rdfs:comment "Class to group those properties related to power lines"@en ;
-    rdfs:label "Power Line Property"@en ;
-    rdfs:subClassOf saref:Property .
 	
 s4grid:PowerLine a owl:Class ;
 	rdfs:comment "Interconnected network for electricity delivery from producers to consumers"@en ;
@@ -836,6 +842,11 @@ s4grid:ProfileGeneric a owl:Class ;
 s4grid:PropertyValue a owl:Class ;
 	rdfs:comment "A value (which may have a unit of measurement) that is related to a property which is not observable by the meter (i.e., is not a measurement)"@en ;
     rdfs:label "Property Value"@en .
+
+s4grid:QualityProperty a owl:Class ;
+	rdfs:comment "Class to group those properties related to the quality of power lines"@en ;
+    rdfs:label "Quality Property"@en ;
+    rdfs:subClassOf saref:Property .
 
 s4grid:RangeDescriptor a owl:Class ;
 	rdfs:comment "In the case of a get service of a profile generic class a selective access can be specified. This indicates the range of values to be retrieved from the profile generic class"@en ;
@@ -944,7 +955,7 @@ s4grid:SimpleActionOperationInput a owl:Class ;
         s4grid:CosemOperationInput .
 
 s4grid:SingleScheduledAction a owl:Class ;
-	rdfs:comment "[COSEM] This class allows modelling the execution of periodic actions within a meter; such actions are not necessarily linked to pricing"@en ;
+	rdfs:comment "[COSEM] This class allows modelling the execution of periodic actions within a meter; such actions are not necessarily linked to tariffication"@en ;
     rdfs:label "Single Scheduled Action"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -978,17 +989,17 @@ s4grid:SpecialDayProfile a owl:Class ;
 #################################################################
 
 s4grid:ActiveEnergy a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its active energy"@en ;
     rdfs:label "Active Energy"@en .
 
 s4grid:ActivePower a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its active power"@en ;
     rdfs:label "Active Power"@en .
 
 s4grid:ApparentPower a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its apparent power"@en ;
     rdfs:label "Apparent Power"@en .
 
@@ -998,27 +1009,27 @@ s4grid:BillingPeriod a owl:NamedIndividual,
     rdfs:label "Billing Period"@en .
 		
 s4grid:Current a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its current"@en ;
     rdfs:label "Current"@en .
 
 s4grid:DemandRegister a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its demand register"@en ;
     rdfs:label "Demand Register"@en .
 
 s4grid:DurationLongPowerFailure a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:QualityProperty ;
 	rdfs:comment "Property of the power line indicating the duration of the long power failures detected"@en ;
     rdfs:label "Duration Long Power Failure"@en .
 
 s4grid:DurationVoltageSag a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:QualityProperty ;
 	rdfs:comment "Property of the power line indicating the duration of the voltage sags detected"@en ;
     rdfs:label "Duration Voltage Sag"@en .
 
 s4grid:DurationVoltageSwell a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:QualityProperty ;
 	rdfs:comment "Property of the power line indicating the duration of the voltage swells detected"@en ;
     rdfs:label "Duration Voltage Swell"@en .
 
@@ -1048,7 +1059,7 @@ s4grid:PhaseAngle a owl:NamedIndividual,
     rdfs:label "Phase Angle"@en .
 
 s4grid:PowerFactor a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its power factor"@en ;
     rdfs:label "Power Factor"@en .
 
@@ -1073,12 +1084,12 @@ s4grid:Quadrant a owl:NamedIndividual,
     rdfs:label "Quadrant"@en .
 
 s4grid:ReactiveEnergy a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its reactive energy"@en ;
     rdfs:label "Reactive Energy"@en .
 
 s4grid:ReactivePower a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its reactive power"@en ;
     rdfs:label "Reactive Power"@en .
 
@@ -1103,7 +1114,7 @@ s4grid:TransformerRatio a owl:NamedIndividual,
     rdfs:label "Transformer Ratio"@en .
 
 s4grid:Voltage a owl:NamedIndividual,
-        s4grid:PowerLineProperty ;
+        s4grid:EnergyPowerProperty ;
 	rdfs:comment "Property of the power line indicating its voltage"@en ;
     rdfs:label "Voltage"@en .
 

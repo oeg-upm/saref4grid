@@ -66,7 +66,7 @@ s4grid:ProfileGeneric a owl:Class .
 
 saref:Measurement a owl:Class .
 
-s4grid:PowerLineProperty a owl:Class .
+s4grid:EnergyPowerProperty a owl:Class .
 
 
 #################################################################
@@ -90,34 +90,34 @@ ex:Meter1234 a s4grid:Meter,
         owl:NamedIndividual ;
 	s4grid:hasProfileGeneric ex:IncrementalLoadProfile1234 .
 
-s4grid:ReactiveEnergy a s4grid:PowerLineProperty,
+s4grid:ReactiveEnergy a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
     skos:narrower ex:TotalIncrementalReactiveEnergyQI1234,
 			ex:TotalIncrementalReactiveEnergyQII1234,
 			ex:TotalIncrementalReactiveEnergyQIII1234,
 			ex:TotalIncrementalReactiveEnergyQIV1234 .
 
-ex:TotalIncrementalReactiveEnergyQI1234 a s4grid:PowerLineProperty,
+ex:TotalIncrementalReactiveEnergyQI1234 a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
 	saref:relatesToMeasurement ex:Measurement3 ;
     skos:broader s4grid:ReactiveEnergy .
 
-ex:TotalIncrementalReactiveEnergyQII1234 a s4grid:PowerLineProperty,
+ex:TotalIncrementalReactiveEnergyQII1234 a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
 	saref:relatesToMeasurement ex:Measurement4 ;
     skos:broader s4grid:ReactiveEnergy .
 
-ex:TotalIncrementalReactiveEnergyQIII1234 a s4grid:PowerLineProperty,
+ex:TotalIncrementalReactiveEnergyQIII1234 a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
 	saref:relatesToMeasurement ex:Measurement5 ;
     skos:broader s4grid:ReactiveEnergy .
 
-ex:TotalIncrementalReactiveEnergyQIV1234 a s4grid:PowerLineProperty,
+ex:TotalIncrementalReactiveEnergyQIV1234 a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
 	saref:relatesToMeasurement ex:Measurement6 ;
     skos:broader s4grid:ReactiveEnergy .
 
-s4grid:ActiveEnergy a s4grid:PowerLineProperty,
+s4grid:ActiveEnergy a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
     skos:narrower ex:TotalIncrementalActiveEnergyImport1234,
 			ex:TotalIncrementalActiveEnergyExport1234 .
@@ -157,12 +157,12 @@ ex:PropertyValue1 a s4grid:PropertyValue,
         owl:NamedIndividual ;
     s4grid:hasProperty ex:AMRStatusLoadProfilePeriod1-1234 .
 
-ex:TotalIncrementalActiveEnergyExport1234 a s4grid:PowerLineProperty,
+ex:TotalIncrementalActiveEnergyExport1234 a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
 	saref:relatesToMeasurement ex:Measurement2 ;
     skos:broader s4grid:ActiveEnergy .
 
-ex:TotalIncrementalActiveEnergyImport1234 a s4grid:PowerLineProperty,
+ex:TotalIncrementalActiveEnergyImport1234 a s4grid:EnergyPowerProperty,
         owl:NamedIndividual ;
     saref:relatesToMeasurement ex:Measurement1 ;
 	skos:broader s4grid:ActiveEnergy .
