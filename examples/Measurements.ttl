@@ -63,7 +63,7 @@ saref:EnergyUnit a owl:Class .
 
 saref:Measurement a owl:Class .
 
-s4grid:EnergyPowerProperty a owl:Class .
+s4grid:EnergyAndPowerProperty a owl:Class .
 
 
 #################################################################
@@ -73,11 +73,11 @@ s4grid:EnergyPowerProperty a owl:Class .
 om:watt a saref:EnergyUnit,
 		owl:NamedIndividual .
 
-s4grid:ActiveEnergy a s4grid:EnergyPowerProperty,
+s4grid:ActiveEnergy a s4grid:EnergyAndPowerProperty,
         owl:NamedIndividual ;
     skos:narrower ex:TotalIncrementalActiveEnergyImport .
 
-s4grid:DemandRegister a s4grid:EnergyPowerProperty,
+s4grid:DemandRegister a s4grid:EnergyAndPowerProperty,
 	owl:NamedIndividual ;
     skos:narrower ex:MaximumDemandRegisterImportC1TP1 .
 
@@ -96,7 +96,7 @@ ex:Meter1234 a s4grid:Meter,
 om:wattHour a saref:EnergyUnit,
         owl:NamedIndividual .
 
-ex:MaximumDemandRegisterImportC1TP1 a s4grid:EnergyPowerProperty,
+ex:MaximumDemandRegisterImportC1TP1 a s4grid:EnergyAndPowerProperty,
         owl:NamedIndividual ;
     s4grid:hasObis "1-0:1.6.11.255"^^xsd:string ;
     saref:isPropertyOf ex:SubstationLine23 ;
@@ -115,7 +115,7 @@ ex:SubstationLine23 a s4grid:PowerLine,
     saref:hasProperty ex:MaximumDemandRegisterImportC1TP1,
         ex:TotalIncrementalActiveEnergyImport .
 
-ex:TotalIncrementalActiveEnergyImport a s4grid:EnergyPowerProperty,
+ex:TotalIncrementalActiveEnergyImport a s4grid:EnergyAndPowerProperty,
         owl:NamedIndividual ;
     s4grid:hasObis "1-0:1.29.0.255"^^xsd:string ;
     saref:isPropertyOf ex:SubstationLine23 ;

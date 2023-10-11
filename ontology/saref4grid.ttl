@@ -723,7 +723,7 @@ s4grid:DaySchedule a owl:Class ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty s4grid:executesScript ] .
 
-s4grid:EnergyPowerProperty a owl:Class ;
+s4grid:EnergyAndPowerProperty a owl:Class ;
 	rdfs:comment "Class to group those properties related to the energy and power of power lines"@en ;
     rdfs:label "Energy Power Property"@en ;
     rdfs:subClassOf saref:Property .
@@ -989,17 +989,17 @@ s4grid:SpecialDayProfile a owl:Class ;
 #################################################################
 
 s4grid:ActiveEnergy a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its active energy"@en ;
     rdfs:label "Active Energy"@en .
 
 s4grid:ActivePower a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its active power"@en ;
     rdfs:label "Active Power"@en .
 
 s4grid:ApparentPower a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its apparent power"@en ;
     rdfs:label "Apparent Power"@en .
 
@@ -1009,12 +1009,12 @@ s4grid:BillingPeriod a owl:NamedIndividual,
     rdfs:label "Billing Period"@en .
 		
 s4grid:Current a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its current"@en ;
     rdfs:label "Current"@en .
 
 s4grid:DemandRegister a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its demand register"@en ;
     rdfs:label "Demand Register"@en .
 
@@ -1059,7 +1059,7 @@ s4grid:PhaseAngle a owl:NamedIndividual,
     rdfs:label "Phase Angle"@en .
 
 s4grid:PowerFactor a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its power factor"@en ;
     rdfs:label "Power Factor"@en .
 
@@ -1084,12 +1084,12 @@ s4grid:Quadrant a owl:NamedIndividual,
     rdfs:label "Quadrant"@en .
 
 s4grid:ReactiveEnergy a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its reactive energy"@en ;
     rdfs:label "Reactive Energy"@en .
 
 s4grid:ReactivePower a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its reactive power"@en ;
     rdfs:label "Reactive Power"@en .
 
@@ -1114,7 +1114,7 @@ s4grid:TransformerRatio a owl:NamedIndividual,
     rdfs:label "Transformer Ratio"@en .
 
 s4grid:Voltage a owl:NamedIndividual,
-        s4grid:EnergyPowerProperty ;
+        s4grid:EnergyAndPowerProperty ;
 	rdfs:comment "Property of the power line indicating its voltage"@en ;
     rdfs:label "Voltage"@en .
 

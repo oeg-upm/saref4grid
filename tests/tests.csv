@@ -48,15 +48,15 @@ GRID-TEST-46;GRID-22;Remote management of meters;PropertyValue hasValue string
 GRID-TEST-47;GRID-23;Remote management of meters;MeterProperty isMeasuredIn UnitOfMeasure
 GRID-TEST-48;GRID-24;Remote management of meters;Meter hasService SetService
 GRID-TEST-49;GRID-25;Remote management of meters;Meter hasService SetService
-GRID-TEST-50;GRID-26;Remote management of meters;Meter measuresProperty EnergyPowerProperty
-GRID-TEST-51;GRID-26;Remote management of meters;EnergyPowerProperty isPropertyOf PowerLine
-GRID-TEST-52;GRID-26;Remote management of meters;ActiveEnergy type EnergyPowerProperty
-GRID-TEST-53;GRID-27;Remote management of meters;ActiveEnergy type EnergyPowerProperty
-GRID-TEST-54;GRID-28;Remote management of meters;EnergyPowerProperty isMeasuredIn UnitOfMeasure
-GRID-TEST-55;GRID-29;Remote management of meters;ReactiveEnergy type EnergyPowerProperty
-GRID-TEST-56;GRID-30;Remote management of meters;EnergyPowerProperty isMeasuredIn UnitOfMeasure
-GRID-TEST-57;GRID-31;Remote management of meters;ActiveEnergy type EnergyPowerProperty
-GRID-TEST-58;GRID-31;Remote management of meters;ReactiveEnergy type EnergyPowerProperty
+GRID-TEST-50;GRID-26;Remote management of meters;Meter measuresProperty EnergyAndPowerProperty
+GRID-TEST-51;GRID-26;Remote management of meters;EnergyAndPowerProperty isPropertyOf PowerLine
+GRID-TEST-52;GRID-26;Remote management of meters;ActiveEnergy type EnergyAndPowerProperty
+GRID-TEST-53;GRID-27;Remote management of meters;ActiveEnergy type EnergyAndPowerProperty
+GRID-TEST-54;GRID-28;Remote management of meters;EnergyAndPowerProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-55;GRID-29;Remote management of meters;ReactiveEnergy type EnergyAndPowerProperty
+GRID-TEST-56;GRID-30;Remote management of meters;EnergyAndPowerProperty isMeasuredIn UnitOfMeasure
+GRID-TEST-57;GRID-31;Remote management of meters;ActiveEnergy type EnergyAndPowerProperty
+GRID-TEST-58;GRID-31;Remote management of meters;ReactiveEnergy type EnergyAndPowerProperty
 GRID-TEST-59;GRID-32;Remote management of meters;Measurement hasTimestamp dateTime
 GRID-TEST-60;GRID-33;Remote management of meters;Meter hasProfileGeneric ProfileGeneric
 GRID-TEST-61;GRID-34;Remote management of meters;ProfileGeneric hasCapturePeriod integer
@@ -130,16 +130,16 @@ GRID-TEST-128;GRID-94;Management of tertiary sensor devices;Meter hasService Get
 GRID-TEST-129;GRID-95;Management of tertiary sensor devices;Meter hasService SetService
 GRID-TEST-130;GRID-96;Management of tertiary sensor devices;Meter hasService GetService
 GRID-TEST-131;GRID-97;Management of tertiary sensor devices;Meter hasService GetService
-GRID-TEST-132;GRID-99;Management of OLTC transformers;Current type EnergyPowerProperty
-GRID-TEST-133;GRID-99;Management of OLTC transformers;Voltage type EnergyPowerProperty
-GRID-TEST-134;GRID-99;Management of OLTC transformers;ActivePower type EnergyPowerProperty
-GRID-TEST-135;GRID-99;Management of OLTC transformers;ReactivePower type EnergyPowerProperty
-GRID-TEST-136;GRID-100;Management of OLTC transformers;Current type EnergyPowerProperty
-GRID-TEST-137;GRID-100;Management of OLTC transformers;Voltage type EnergyPowerProperty
-GRID-TEST-138;GRID-100;Management of OLTC transformers;ActivePower type EnergyPowerProperty
-GRID-TEST-139;GRID-100;Management of OLTC transformers;ReactivePower type EnergyPowerProperty
-GRID-TEST-140;GRID-101;Management of OLTC transformers;Voltage type EnergyPowerProperty
-GRID-TEST-141;GRID-102;Management of OLTC transformers;Voltage type EnergyPowerProperty
+GRID-TEST-132;GRID-99;Management of OLTC transformers;Current type EnergyAndPowerProperty
+GRID-TEST-133;GRID-99;Management of OLTC transformers;Voltage type EnergyAndPowerProperty
+GRID-TEST-134;GRID-99;Management of OLTC transformers;ActivePower type EnergyAndPowerProperty
+GRID-TEST-135;GRID-99;Management of OLTC transformers;ReactivePower type EnergyAndPowerProperty
+GRID-TEST-136;GRID-100;Management of OLTC transformers;Current type EnergyAndPowerProperty
+GRID-TEST-137;GRID-100;Management of OLTC transformers;Voltage type EnergyAndPowerProperty
+GRID-TEST-138;GRID-100;Management of OLTC transformers;ActivePower type EnergyAndPowerProperty
+GRID-TEST-139;GRID-100;Management of OLTC transformers;ReactivePower type EnergyAndPowerProperty
+GRID-TEST-140;GRID-101;Management of OLTC transformers;Voltage type EnergyAndPowerProperty
+GRID-TEST-141;GRID-102;Management of OLTC transformers;Voltage type EnergyAndPowerProperty
 GRID-TEST-142;GRID-103;Management of OLTC transformers;Meter hasService GetService
 GRID-TEST-143;GRID-104;Management of OLTC transformers;ProfileGeneric relatedMeasurement Measurement
 GRID-TEST-144;GRID-105;Management of OLTC transformers;Meter hasService GetService
