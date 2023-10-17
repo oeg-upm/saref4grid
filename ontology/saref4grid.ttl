@@ -194,7 +194,8 @@ saref:represents a owl:ObjectProperty ;
 
 s4grid:executesScript a owl:ObjectProperty ;
 	rdfs:comment "[COSEM] Defines the script to be executed"@en ;
-    rdfs:label "executes script"@en .
+    rdfs:label "executes script"@en ;
+	rdfs:range s4grid:Script .
 
 s4grid:hasActiveSeasonProfile a owl:ObjectProperty ;
 	rdfs:comment "[COSEM] Contains a list of active season profiles. These season profiles form an active calendar"@en ;
@@ -234,11 +235,13 @@ s4grid:hasFirmware a owl:ObjectProperty ;
 
 s4grid:hasFridayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Friday of the season"@en ;
-    rdfs:label "has friday profile"@en .
+    rdfs:label "has friday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasMondayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Monday of the season"@en ;
-    rdfs:label "has monday profile"@en .
+    rdfs:label "has monday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasNetworkInterface a owl:ObjectProperty ;
 	rdfs:comment "The network interface of the meter"@en ;
@@ -272,7 +275,8 @@ s4grid:hasPropertyValue a owl:ObjectProperty ;
 
 s4grid:hasSaturdayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Saturday of the season"@en ;
-    rdfs:label "has saturday profile"@en .
+    rdfs:label "has saturday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasScriptTable a owl:ObjectProperty ;
 	rdfs:comment "The script table of a meter"@en ;
@@ -294,23 +298,28 @@ s4grid:hasSingleScheduledAction a owl:ObjectProperty ;
 
 s4grid:hasSpecialDayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines when there is a festivity and therefore a normal day behaves as a special date"@en ;
-    rdfs:label "has special day profile"@en .
+    rdfs:label "has special day profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 	
 s4grid:hasSundayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Sunday of the season"@en ;
-    rdfs:label "has sunday profile"@en .
+    rdfs:label "has sunday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasThursdayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Thursday of the season"@en ;
-    rdfs:label "has thursday profile"@en .
+    rdfs:label "has thursday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasTuesdayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Tuesday of the season"@en ;
-    rdfs:label "has tuesday profile"@en .
+    rdfs:label "has tuesday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasWednesdayProfile a owl:ObjectProperty ;
 	rdfs:comment "It defines the day profile valid each Wednesday of the season"@en ;
-    rdfs:label "has wednesday profile"@en .
+    rdfs:label "has wednesday profile"@en ;
+	rdfs:subPropertyOf s4grid:hasDayProfile .
 
 s4grid:hasUnit a owl:ObjectProperty ;
 	rdfs:comment "A relationship identifying the unit of measure used for a certain property value"@en ;
@@ -357,11 +366,13 @@ saref:hasValue a owl:DatatypeProperty ;
 
 s4grid:obtainFromEntry a owl:DatatypeProperty ;
 	rdfs:comment "It defines the first entry to be retrieved from a profile generic"@en ;
-    rdfs:label "obtain from entry"@en .
+    rdfs:label "obtain from entry"@en ;
+	rdfs:domain s4grid:EntryDescriptor .
 
 s4grid:obtainFromValue a owl:DatatypeProperty ;
 	rdfs:comment "It restricts the range of entries to be retrieved from a profile generic defining the oldest or smallest entry to retrieve"@en ;
-    rdfs:label "obtain from value"@en .
+    rdfs:label "obtain from value"@en ;
+	rdfs:domain s4grid:RangeDescriptor .
 
 s4grid:obtainInputForProperty a owl:DatatypeProperty ;
 	rdfs:comment "It identifies the attribute of an instance (COSEM object) of a class from which the data is going to be obtained. The value of this property conforms to and object property or datatype property of SAREF4GRID"@en ;
@@ -371,90 +382,108 @@ s4grid:obtainInputForProperty a owl:DatatypeProperty ;
 s4grid:obtainInputFromObis a owl:DatatypeProperty ;
 	rdfs:comment "It identifies the instance (COSEM object) of a class from which the data is going to be obtained. The value of this property conforms to OBIS"@en ;
     rdfs:label "obtain input from obis"@en ;
+	rdfs:domain s4grid:CosemOperationInput ;
     rdfs:range xsd:string .
 
 s4grid:hasActionValue a owl:DatatypeProperty ;
 	rdfs:comment "It specifies the input of a method from the instance (COSEM object) of a class. The value of this property conforms to a simple type (not a structure)"@en ;
-    rdfs:label "has action value"@en .
+    rdfs:label "has action value"@en ;
+	rdfs:domain s4grid:SimpleActionOperationInput .
 	
 s4grid:hasActivatePassiveCalendarTime a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Defines the time when the passive calendar will be activated"@en ;
     rdfs:label "has activate passive calendar time"@en ;
+	rdfs:domain s4grid:ActivityCalendar ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasCalendarNameActive a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Used defined name identifying the passive calendar. Typically contains an identifier of the active calendar (currently active), which is descriptive to the set of scripts activated by the object"@en ;
     rdfs:label "has calendar name active"@en ;
+	rdfs:domain s4grid:ActivityCalendar ;
     rdfs:range xsd:string .
 
 s4grid:hasCalendarNamePassive a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] User defined name identifying the passive calendar. Typically contains an identifier of the passive calendar (will be activated), which is descriptive to the set of scripts activated by the object"@en ;
     rdfs:label "has calendar name passive"@en ;
+	rdfs:domain s4grid:ActivityCalendar ;
     rdfs:range xsd:string .
 
 s4grid:hasCapturePeriod a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] The capturing period of a profile generic in seconds. If its value is 0, then there is not automatic capturing; capturing is triggered externally or through capture events occur asynchronously. If its value is greater than 0, then automatic capturing is assumed"@en ;
     rdfs:label "has capture period"@en ;
+	rdfs:domain s4grid:ProfileGeneric ;
     rdfs:range xsd:int .
 
 s4grid:hasClockBase a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Defines where the basic timing information comes from: (0) not defined, (1) internal crystal, (2) mains frequency 50 Hz, (3) mains frequency 60 Hz, (4) GPS (global positioning system), (5) radio controlled"@en ;
     rdfs:label "has clock base"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:int .
 
 s4grid:hasControlMode a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Configures the behaviour of the disconnect control object for all triggers, i.e. the possible state transitions"@en ;
     rdfs:label "has control mode"@en ;
+	rdfs:domain s4grid:BreakerState ;
     rdfs:range xsd:int .
 
 s4grid:hasControlState a owl:DatatypeProperty ;
 	rdfs:comment "Shows the internal state of the disconnect control object: (0) Disconnected, (1) Connected, (2) Ready for reconnection"@en ;
     rdfs:label "has control state"@en ;
+	rdfs:domain s4grid:BreakerState ;
     rdfs:range xsd:int .
 
 s4grid:hasDayId a owl:DatatypeProperty ;
 	rdfs:comment "It defines the unique identifier of a day"@en ;
     rdfs:label "has day id"@en ;
+	rdfs:domain s4grid:SpecialDayEntry ;
     rdfs:range xsd:int .
 
 s4grid:hasDaylightSavingsBegin a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Defines the local switch date and time when the local time starts to deviate from the normal time"@en ;
     rdfs:label "has daylight savings begin"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasDaylightSavingsDeviation a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Contains the number of minutes by which the deviation in generalized time shall be corrected at daylight savings begin"@en ;
     rdfs:label "has daylight savings deviation"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:integer .
 
 s4grid:hasDaylightSavingsEnabled a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Enable and disable the daylight savings time feature"@en ;
     rdfs:label "has daylight savings enabled"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:boolean .
 
 s4grid:hasDaylightSavingsEnd a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Defines the local switch date and time when the local time ends to deviate from the local normal time"@en ;
     rdfs:label "has daylight savings end"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasExecutionTime a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Specifies the time and the date when the script is executed"@en ;
     rdfs:label "has execution time"@en ;
+	rdfs:domain s4grid:SingleScheduledAction ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasFirmwareVersion a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Textual description of the firmware version running on the device"@en ;
     rdfs:label "has firmware version"@en ;
+	rdfs:domain s4grid:Firmware ;
     rdfs:range xsd:string .
 
 s4grid:hasIndex a owl:DatatypeProperty ;
 	rdfs:comment "It defines the index of the special day"@en ;
     rdfs:label "has index"@en ;
+	rdfs:domain s4grid:SpecialDayEntry ;
     rdfs:range xsd:unsignedShort .
 
 s4grid:hasMACAddress a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Holds the MAC address"@en ;
     rdfs:label "has m a c address"@en ;
+	rdfs:domain s4grid:NetworkInterface ;
     rdfs:range xsd:string .
 
 s4grid:hasObis a owl:DatatypeProperty ;
@@ -465,80 +494,96 @@ s4grid:hasObis a owl:DatatypeProperty ;
 s4grid:hasOutputState a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Shows the actual physical state of the device connection to the supply: (True) Connected, (False) Disconnected"@en ;
     rdfs:label "has output state"@en ;
+	rdfs:domain s4grid:BreakerState ;
     rdfs:range xsd:boolean .
 
 s4grid:hasProductId a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Vendor-assigned unique identifier for the specific product"@en ;
     rdfs:label "has product id"@en ;
+	rdfs:domain s4grid:Firmware ;
     rdfs:range xsd:unsignedShort .
 
 s4grid:hasPresetTime a owl:DatatypeProperty ;
 	rdfs:comment "It pre-sets the clock time to a new value"@en ;
     rdfs:label "has preset time"@en ;
+	rdfs:domain s4grid:PresetAdjustingTime ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasSeasonProfileName a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] User defined name identifying the current season profile"@en ;
     rdfs:label "has season profile name"@en ;
+	rdfs:domain s4grid:SeasonProfile ;
     rdfs:range xsd:string .
 
 s4grid:hasSeasonStart a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Starting time of the season profile. The current season profile is terminated by the starting time of the next season"@en ;
     rdfs:label "has season start"@en ;
+	rdfs:domain s4grid:ActivityCalendar ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasSpecialDate a owl:DatatypeProperty ;
 	rdfs:comment "It defines the date at which a normal day is considered a special date"@en ;
     rdfs:label "has special date"@en ;
+	rdfs:domain s4grid:SpecialDayEntry ;
     rdfs:range xsd:date .
 
 s4grid:hasSpecialDayDate a owl:DatatypeProperty ;
 	rdfs:comment "Dates at which a normal day is considered a special date (i.e., Christmas)"@en ;
     rdfs:label "has special day date"@en ;
+	rdfs:domain s4grid:SpecialDayProfile ;
     rdfs:range xsd:date .
 
 s4grid:hasStartTime a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Time when the script is going to be executed"@en ;
     rdfs:label "has start time"@en ;
+	rdfs:domain s4grid:DaySchedule ;
     rdfs:range xsd:time .
 
 s4grid:hasStatus a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Status of the clock"@en ;
     rdfs:label "has status"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:int .
 
 s4grid:hasTime a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Meter’s local date and time"@en ;
     rdfs:label "has time"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasTimeZone a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] The deviation of local, normal time to UTC in minutes. The value depends on the geographical location of the meter"@en ;
     rdfs:label "has time zone"@en ;
+	rdfs:domain s4grid:Clock ;
     rdfs:range xsd:long .
 
 s4grid:hasValidityIntervalEnd a owl:DatatypeProperty ;
 	rdfs:comment "It defines the end of a validity interval within which the new time can be activated"@en ;
     rdfs:label "has validity interval end"@en ;
+	rdfs:domain s4grid:PresetAdjustingTime ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasValidityIntervalStart a owl:DatatypeProperty ;
 	rdfs:comment "It defines the start of a validity interval within which the new time can be activated"@en ;
     rdfs:label "has validity interval start"@en ;
+	rdfs:domain s4grid:PresetAdjustingTime ;
     rdfs:range xsd:dateTime .
 
 s4grid:hasValue a owl:DatatypeProperty ;
 	rdfs:comment "A relationship defining the value of a certain property which is not observable by the meter"@en ;
-    rdfs:label "has value"@en .
+    rdfs:label "has value"@en ;
+	rdfs:domain s4grid:PropertyValue .
 
 s4grid:hasVendorId a owl:DatatypeProperty ;
 	rdfs:comment "[COSEM] Unique vendor identifier assigned by the PRIME Alliance"@en ;
     rdfs:label "has vendor id"@en ;
+	rdfs:domain s4grid:Firmware ;
     rdfs:range xsd:unsignedShort .
 
 s4grid:hasInputDataType a owl:DatatypeProperty ;
 	rdfs:comment "It identifies the type of the attribute of an instance (COSEM object) of a class from which the data is going to be obtained. The value of this property conforms to the range of a datatype property of SAREF4GRID"@en ;
     rdfs:label "has input data type"@en ;
+	rdfs:domain s4grid:SetOperationDataInput ;
     rdfs:range xsd:string .
 
 s4grid:hasInputObjectType a owl:DatatypeProperty ;
@@ -549,20 +594,24 @@ s4grid:hasInputObjectType a owl:DatatypeProperty ;
 s4grid:hasOutputDataType a owl:DatatypeProperty ;
 	rdfs:comment "It identifies the type of the attribute of an instance (COSEM object) of a class from which the data is going to be obtained. The value of this property conforms to the range of a datatype property of SAREF4GRID"@en ;
     rdfs:label "has output data type"@en ;
+	rdfs:domain s4grid:GetOperationDataOutput ;
     rdfs:range xsd:string .
 
 s4grid:hasOutputObjectType a owl:DatatypeProperty ;
 	rdfs:comment "It identifies the type of the attribute of an instance (COSEM object) of a class from which the data is going to be obtained. The value of this property conforms to the range of an object property of SAREF4GRID"@en ;
     rdfs:label "has output object type"@en ;
+	rdfs:domain s4grid:GetOperationObjectOutput ;
     rdfs:range xsd:string .
 	
 s4grid:obtainToEntry a owl:DatatypeProperty ;
 	rdfs:comment "It defines the last entry to be retrieved from a profile generic"@en ;
-    rdfs:label "obtain to entry"@en .
+    rdfs:label "obtain to entry"@en ;
+	rdfs:domain s4grid:EntryDescriptor .
 
 s4grid:obtainToValue a owl:DatatypeProperty ;
 	rdfs:comment "It restricts the range of entries to be retrieved from a profile generic defining the newest or largest entry to retrieve"@en ;
-    rdfs:label "obtain to value"@en .
+    rdfs:label "obtain to value"@en ;
+	rdfs:domain s4grid:RangeDescriptor .
 	
 #################################################################
 #    Classes

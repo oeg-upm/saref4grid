@@ -60,4 +60,4 @@ ex:CurrentConnectivityState a s4grid:BreakerState,
     s4grid:hasControlMode "1"^^xsd:int ;
     s4grid:hasControlState "1"^^xsd:int ;
     s4grid:hasObis "0-0:10.0.196.255"^^xsd:string ;
-    s4grid:hasOutputState "True"^^xsd:boolean .
+    s4grid:hasOutputState "true"^^xsd:boolean .
