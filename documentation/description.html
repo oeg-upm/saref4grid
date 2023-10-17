@@ -12,27 +12,27 @@
 	<p><a href="#Figure_1">Figure 1</a>, <a href="#Figure_2">Figure 2</a>, <a href="#Figure_3">Figure 3</a> and <a href="#Figure_4">Figure 4</a> present an overview of the classes and the properties included in the SAREF4GRID extension.</p>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Overview_1.png"><img src="diagrams/SAREF4GRID_Overview_1.png" alt="SAREF4GRID overview. Electric meter information"/></a>
-	  <figcaption id="Figure_1">Figure 1: SAREF4GRID overview. Electric meter information</figcaption>
+	  <a href="diagrams/SAREF4GRID_Overview_1.png"><img src="diagrams/SAREF4GRID_Overview_1.png" alt="SAREF4GRID overview: Meter information"/></a>
+	  <figcaption id="Figure_1">Figure 1: SAREF4GRID overview: Meter information</figcaption>
 	</figure>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Overview_2.png"><img src="diagrams/SAREF4GRID_Overview_2.png" alt="SAREF4GRID overview. Measurements and profiles"/></a>
-	  <figcaption id="Figure_2">Figure 2: SAREF4GRID overview. Measurements and profiles</figcaption>
+	  <a href="diagrams/SAREF4GRID_Overview_2.png"><img src="diagrams/SAREF4GRID_Overview_2.png" alt="SAREF4GRID overview: Measurements and profiles"/></a>
+	  <figcaption id="Figure_2">Figure 2: SAREF4GRID overview: Measurements and profiles</figcaption>
 	</figure>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Overview_3.png"><img src="diagrams/SAREF4GRID_Overview_3.png" alt="SAREF4GRID overview. Activity calendar and scripts"/></a>
-	  <figcaption id="Figure_3">Figure 3: SAREF4GRID overview. Activity calendar and scripts</figcaption>
+	  <a href="diagrams/SAREF4GRID_Overview_3.png"><img src="diagrams/SAREF4GRID_Overview_3.png" alt="SAREF4GRID overview: Activity calendar and scripts"/></a>
+	  <figcaption id="Figure_3">Figure 3: SAREF4GRID overview: Activity calendar and scripts</figcaption>
 	</figure>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Overview_4.png"><img src="diagrams/SAREF4GRID_Overview_4.png" alt="SAREF4GRID overview. Services"/></a>
-	  <figcaption id="Figure_4">Figure 4: Figure 4: SAREF4GRID overview. Services</figcaption>
+	  <a href="diagrams/SAREF4GRID_Overview_4.png"><img src="diagrams/SAREF4GRID_Overview_4.png" alt="SAREF4GRID overview: Services"/></a>
+	  <figcaption id="Figure_4">Figure 4: Figure 4: SAREF4GRID overview: Services</figcaption>
 	</figure>
 
 
-	<h3>Electric grid meter</h3>
+	<h3>Meter</h3>
 
 	<p><a href="#Figure_5">Figure 5</a> provides an overview of how to represent an electric grid meter using the <a href="#s4grid:Meter">s4grid:Meter</a> class. 
 	  The representation of electric grid meters and their properties has been extracted from the DLMS/COSEM standard (IEC 62056)</p>
@@ -48,7 +48,7 @@
 		(<a href="https://saref.etsi.org/core/UnitOfMeasure">saref:UnitOfMeasure</a>).</p>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Electric_grid_meter.png"><img src="diagrams/SAREF4GRID_Electric_grid_meter.png" alt="Electric grid meter model"/></a>
+	  <a href="diagrams/SAREF4GRID_Electric_grid_meter.png"><img src="diagrams/SAREF4GRID_Electric_grid_meter.png" alt="Meter model"/></a>
 	  <figcaption id="Figure_5">Figure 5: Meter model</figcaption>
 	</figure>
 
@@ -59,11 +59,13 @@
 	  (<a href="#s4grid:LongPowerFailuresNumber">s4grid:LongPowerFailuresNumber</a>), information provided by the manufacturer (<a href="#s4grid:Manufacturer">s4grid:Manufacturer</a>), turn ratio of the transformer 
 	  (<a href="#s4grid:TransformerRatio">s4grid:TransformerRatio</a>), communication configuration (<a href="#s4grid:Network">s4grid:Network</a>), status of meter profiles (<a href="#s4grid:ProfileStatus">s4grid:ProfileStatus</a>), client power limits 
 	  (<a href="#s4grid:PowerLimit">s4grid:PowerLimit</a>), references values for power quality (<a href="#s4grid:PowerQuality">s4grid:PowerQuality</a>), client billing periods (<a href="#s4grid:BillingPeriod">s4grid:BillingPeriod</a>), information about the electric grid phase 
-	  (<a href="#s4grid:Phase">s4grid:Phase</a>), information about the electric grid phase angle (<a href="#s4grid:PhaseAngle">s4grid:PhaseAngle</a>) and electric quadrant (<a href="#s4grid:Quadrant">s4grid:Quadrant</a>). These properties are depicted in <a href="#Figure_6">Figure 6</a>.</p>
+	  (<a href="#s4grid:Phase">s4grid:Phase</a>), information about the electric grid phase angle (<a href="#s4grid:PhaseAngle">s4grid:PhaseAngle</a>) and electric quadrant (<a href="#s4grid:Quadrant">s4grid:Quadrant</a>). 
+	  It should be noted that in SAREF4GRID only the general properties are being defined. In order to use a more specific property it is advisable to indicate the general property it comes from (if it exists). 
+	  These properties are depicted in <a href="#Figure_6">Figure 6</a>.</p>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Meter_properties.png"><img src="diagrams/SAREF4GRID_Meter_properties.png" alt="Meter properties model"/></a>
-	  <figcaption id="Figure_6">Figure 6: Meter properties model</figcaption>
+	  <a href="diagrams/SAREF4GRID_Meter_properties.png"><img src="diagrams/SAREF4GRID_Meter_properties.png" alt="Meter property model"/></a>
+	  <figcaption id="Figure_6">Figure 6: Meter property model</figcaption>
 	</figure>
 
 
@@ -85,7 +87,7 @@
 
 	<h3>Network Interface</h3>
 
-	<p>SAREF4GRID allows describing the MAC address of the physical device (or, more generally, of a device or software)  by means of the <a href="#s4grid:NetworkInterface">s4grid:NetworkInterface</a> class, 
+	<p>SAREF4GRID allows describing the MAC address of the physical device (or, more generally, of a device or software) by means of the <a href="#s4grid:NetworkInterface">s4grid:NetworkInterface</a> class, 
 	  as presented in <a href="#Figure_8">Figure 8</a>. There shall be an instance of this class for each network interface of a meter. The representation of the network 
 	  interface of a meter has been extracted from the IEC 62056-6-2:2017.</p>
 	 
@@ -114,20 +116,20 @@
 	</figure>
 
 
-	<h3>Connectivity State</h3>
+	<h3>Breaker State</h3>
 
 	<p>As it can be observed in <a href="#Figure_10">Figure 10</a>, the modelling of states in the SAREF4GRID ontology mostly relies on the state model proposed in SAREF.</p>
 
 	<p>SAREF allows to define the state in which a device can be found. However, the SAREF4GRID extension also requires to be able to define the possible transitions between 
-	  states and complex states. Therefore, the <a href="#s4grid:ConnectivityState">s4grid:ConnectivityState</a> class has been defined according to the IEC 62056-6-2:2017.</p>
+	  states and complex states. Therefore, the <a href="#s4grid:BreakerState">s4grid:BreakerState</a> class has been defined according to the IEC 62056-6-2:2017.</p>
 
-	<p>A meter connectivity state represents the internal or external disconnect unit of the meter (e.g., electricity breaker, gas valve) in order to connect or disconnect the premises of 
-	  the consumer to/from the supply. A meter connectivity state may be described by its: physical state (<a href="#s4grid:hasOutputState">s4grid:hasOutputState</a>), internal state 
+	<p>A meter breaker state represents the internal or external disconnect unit of the meter (e.g., electricity breaker, gas valve) in order to connect or disconnect the premises of 
+	  the consumer to/from the supply. A meter breaker state may be described by its: physical state (<a href="#s4grid:hasOutputState">s4grid:hasOutputState</a>), internal state 
 	  (<a href="#s4grid:hasControlState">s4grid:hasControlState</a>) and the possible transitions between states (<a href="#s4grid:hasControlMode">s4grid:hasControlMode</a>).</p>
 
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Connectivity_state.png"><img src="diagrams/SAREF4GRID_Connectivity_state.png" alt="Connectivity State model"/></a>
-	  <figcaption id="Figure_10">Figure 10: Connectivity State model</figcaption>
+	  <a href="diagrams/SAREF4GRID_Breaker_state.png"><img src="diagrams/SAREF4GRID_Breaker_state.png" alt="Breaker State model"/></a>
+	  <figcaption id="Figure_10">Figure 10: Breaker State model</figcaption>
 	</figure>
 
 
@@ -154,7 +156,7 @@
 	<h3>Scheduled Action</h3>
 
 	<p>SAREF4GRID allows the execution of periodic actions within a meter by means of the <a href="#s4grid:SingleScheduledAction">s4grid:SingleScheduledAction</a> class, as presented in <a href="#Figure_12">Figure 12</a> 
-	  ; such actions are not necessarily linked to pricing. A scheduled action describes the script, which is stored in a script table, that is going to be executed at a determined date. 
+	  ; such actions are not necessarily linked to tariffication. A scheduled action describes the script, which is stored in a script table, that is going to be executed at a determined date. 
 	  The representation of the meter scheduled action has been extracted from the IEC 62056-6-2:2017.</p>
 
 	<p>A meter single scheduled action may be described by its: execution time (<a href="#s4grid:hasExecutionTime">s4grid:hasExecutionTime</a>) and what script is going to be executed 
@@ -177,21 +179,22 @@
 	  (<a href="#s4grid:hasCalendarNamePassive">s4grid:hasCalendarNamePassive</a>) and its function is to allow to modify the parameters of the active calendar on a date prior to 
 	  its activation date (<a href="#s4grid:hasActivatePassiveCalendarTime">s4grid:hasActivatePassiveCalendarTime</a>). Activation date is the date from which the meter will use the passive calendar parameters and, 
 	  therefore, they become active calendar parameters. An active calendar is compound by active seasons (<a href="#s4grid:hasActiveSeasonProfile">s4grid:hasActiveSeasonProfile</a>) and 
-	  a passive calendar is compound by passive seasons (<a href="#s4grid:hasPassiveSeasonProfile">s4grid:hasPassiveSeasonProfile</a>).</p>
+	  a passive calendar is compound by passive seasons (<a href="#s4grid:hasPassiveSeasonProfile">s4grid:hasPassiveSeasonProfile</a>). 
+	  Notice that there is no distinction between an active calendar and a passive calendar because together they represent an activity calendar and they share the same OBIS code.</p>
 
 	<p>A season profile (<a href="#s4grid:SeasonProfile">s4grid:SeasonProfile</a>) represents periods of time during the year when billing conditions are always the same. A season is characterized by a start date 
 	  (<a href="#s4grid:hasSeasonStart">s4grid:hasSeasonStart</a>) and seven day profiles (<a href="#s4grid:hasDayProfile">s4grid:hasDayProfile</a>) to apply, which together represents a week 
 	  (there is one day profile for each day of the week). A season finishes when the next season begins.</p>
 
 	<p>A day profile (<a href="#s4grid:DayProfile">s4grid:DayProfile</a>) represents the discrimination of time along the day. Moreover, the seven day profiles together represents a period 
-	  of time during the week when billing conditions are always the same. There are two day profiles: regular days (<a href="#s4grid:RegularDayProfile">s4grid:RegularDayProfile</a>) 
+	  during the week when billing conditions are always the same. There are two day profiles: regular days (<a href="#s4grid:RegularDayProfile">s4grid:RegularDayProfile</a>) 
 	  which represents not festive days, and special days (<a href="#s4grid:SpecialDayProfile">s4grid:SpecialDayProfile</a>) which represents at which date there is a festivity, 
 	  i.e. normal day behaves as a special day (<a href="#s4grid:hasScpecialDayDate">s4grid:hasScpecialDayDate</a>). A day profile is characterized by a day schedule 
 	  (<a href="#s4grid:hasDaySchedule">s4grid:hasDaySchedule</a>).</p>
 
-	<p>A day schedule (<a href="#s4grid:DaySchedule">s4grid:DaySchedule</a>) defines the activation of certain scripts, which can perform different activities inside the electric grid meter. 
-	  For each day schedule, a list of scheduled actions is defined by a script to be executed (<a href="#s4grid:hasStartTime">s4grid:hasStartTime</a>) with the corresponding 
-	  activation time (<a href="#s4grid:executesScript">s4grid:executesScript</a>).</p>
+	<p>A day schedule (<a href="#s4grid:DaySchedule">s4grid:DaySchedule</a>) defines the activation of certain scripts during the day, which can perform different activities inside the meter. 
+	  For each day schedule, a list of scheduled actions is defined by a script to be executed (<a href="#s4grid:executesScript">s4grid:executesScript</a>) with the corresponding 
+	  activation time (<a href="#s4grid:hasStartTime">s4grid:hasStartTime</a>).</p>
 
 	<figure>
 	  <a href="diagrams/SAREF4GRID_Activity_calendar.png"><img src="diagrams/SAREF4GRID_Activity_calendar.png" alt="Activity calendar model"/></a>
@@ -201,44 +204,53 @@
 
 	<h3>Power Line Properties</h3>
 
-	<p>As it can be observed in <a href="#Figure_14">Figure 14</a>, the modelling of measurements in the SAREF4GRID ontology mostly relies on the measurement model proposed in SAREF.</p>
+	<p>As it can be observed in <a href="#Figure_14">Figure 14</a> and <a href="#Figure_15">Figure 15</a>, the modelling of measurements in the SAREF4GRID ontology mostly relies on the measurement model proposed in SAREF. 
+	In order to reduce duplication with SAREF documentation, the reader is referred to the SAREF specification for details about measurement modelling including here details only for the new concepts.</p>
 
-	<p>The DLMS/COSEM standard (IEC 62056) defines the measurements that a meter must take from a power line. </p>
+	<p>The DLMS/COSEM standard (IEC 62056) defines the measurements that a meter must take from a power line. It should be noted that in SAREF4GRID 
+	only the general properties are being defined. In order to use a more specific property it is neccesary to indicate the general property from which it 
+	comes from. The properties that are defined in SAREF4GRID, which are measured from a power line (<a href="#s4grid:PowerLine">s4grid:PowerLine</a>), are depicted in 
+	<a href="#Figure_14">Figure 14</a> and <a href="#Figure_15">Figure 15</a>.</p>
 	
-	<p>SAREF4GRID defines the main properties related to the measurements of a power line (<a href="#s4grid:PowerLineProperty">s4grid:PowerLineProperty</a>): active energy measurements 
+	<p>SAREF4GRID categorises the main properties related to the enregy an power measurements of a power line (<a href="#s4grid:EnergyPowerProperty">s4grid:EnergyPowerProperty</a>): active energy measurements 
 	  (<a href="#s4grid:ActiveEnergy">s4grid:ActiveEnergy</a>), reactive energy measurements (<a href="#s4grid:ReactiveEnergy">s4grid:ReactiveEnergy</a>), apparent power measurements 
 	  (<a href="#s4grid:ApparentPower">s4grid:ApparentPower</a>), demand register measurements (<a href="#s4grid:DemandRegister">s4grid:DemandRegister</a>), active power measurements 
-	  (<a href="#s4grid:ActivePower">s4grid:ActivePower</a>), reactive power measurements (<a href="#s4grid:ReactivePower">s4grid:ReactivePower</a>), duration of voltage sags 
-	  (<a href="#s4grid:DurationVoltageSag">s4grid:DurationVoltageSag</a>) duration of voltage swells (<a href="#s4grid:DurationVoltageSwell">s4grid:DurationVoltageSwell</a>), duration of long power failures 
-	  (<a href="#s4grid:DurationLongPowerFailure">s4grid:DurationLongPowerFailure</a>) , current measurements (<a href="#s4grid:Current">s4grid:Current</a>), voltage measurements 
-	  (<a href="#s4grid:Voltage">s4grid:Voltage</a>) and power factor related measurements (<a href="#s4grid:PowerFactor">s4grid:PowerFactor</a>). These properties which are measured from a power line 
-	  (<a href="#s4grid:PowerLine">s4grid:PowerLine</a>) are depicted in <a href="#Figure_14">Figure 14</a>.</p>
-
+	  (<a href="#s4grid:ActivePower">s4grid:ActivePower</a>), reactive power measurements (<a href="#s4grid:ReactivePower">s4grid:ReactivePower</a>), current measurements (<a href="#s4grid:Current">s4grid:Current</a>), voltage measurements 
+	  (<a href="#s4grid:Voltage">s4grid:Voltage</a>) and power factor related measurements (<a href="#s4grid:PowerFactor">s4grid:PowerFactor</a>).</p>
+	
 	<figure>
-	  <a href="diagrams/SAREF4GRID_Power_line_properties.png"><img src="diagrams/SAREF4GRID_Power_line_properties.png" alt="Power line properties model"/></a>
-	  <figcaption id="Figure_14">Figure 14: Power line properties model</figcaption>
+	  <a href="diagrams/SAREF4GRID_Energy_and_power_properties.png"><img src="diagrams/SAREF4GRID_Energy_and_power_properties.png" alt="Energy and power property model"/></a>
+	  <figcaption id="Figure_14">Figure 14: Energy and power property model</figcaption>
 	</figure>
-
+	
+	<p> SAREF4GRID also categorises the main properties related to quality measurements of a power line (<a href="#s4grid:QualityProperty">s4grid:QualityProperty</a>):duration of voltage sags 
+	  (<a href="#s4grid:DurationVoltageSag">s4grid:DurationVoltageSag</a>), duration of voltage swells (<a href="#s4grid:DurationVoltageSwell">s4grid:DurationVoltageSwell</a>) and duration of long power failures 
+	  (<a href="#s4grid:DurationLongPowerFailure">s4grid:DurationLongPowerFailure</a>).</p>
+	
+	<figure>
+	  <a href="diagrams/SAREF4GRID_Quality_properties.png"><img src="diagrams/SAREF4GRID_Quality_properties.png" alt="Quality property model"/></a>
+	  <figcaption id="Figure_14">Figure 15: Quality property model</figcaption>
+	</figure>
 
 	<h3>Profile Generic</h3>
 
 	<p>SAREF4GRID allows modelling the storing, sorting and accessing of data groups or data series (i.e., capture objects in COSEM) in the meter by means of the 
-	  <a href="#s4grid:ProfileGeneric">s4grid:ProfileGeneric</a> class, as presented in <a href="#Figure_15">Figure 15</a>. Capture objects are specific attributes or elements of (an) attribute(s) of COSEM objects. 
+	  <a href="#s4grid:ProfileGeneric">s4grid:ProfileGeneric</a> class, as presented in <a href="#Figure_16">Figure 16</a>. Capture objects are specific attributes or elements of (an) attribute(s) of COSEM objects. 
 	  The capture objects are collected periodically or occasionally. The representation of the profile generic of a meter has been extracted from the IEC 62056-6-2:2017.</p>
 
-	<p>A profile generic is represented by the objects it captures (<a href="#s4grid:Clock">s4grid:Clock</a>, <a href="#s4grid:PropertyValues">s4grid:PropertyValues</a> and 
+	<p>A profile generic is represented by the objects that it captures (<a href="#s4grid:Clock">s4grid:Clock</a>, <a href="#s4grid:PropertyValues">s4grid:PropertyValues</a> and 
 	  <a href="#s4grid:Measurements">s4grid:Measurements</a>). These capture objects are collected in each period defined in the 
 	  <a href="#s4grid:hasCapturePeriod">s4grid:hasCapturePeriod</a> property.</p>
 
 	<figure>
 	  <a href="diagrams/SAREF4GRID_Profile_generic.png"><img src="diagrams/SAREF4GRID_Profile_generic.png" alt="Profile generic model"/></a>
-	  <figcaption id="Figure_15">Figure 15: Profile generic model</figcaption>
+	  <figcaption id="Figure_15">Figure 16: Profile generic model</figcaption>
 	</figure>
 
 
-	<h3>Get Services</h3>
+	<h3>Get service</h3>
 
-	<p><a href="#Figure_16">Figure 16</a> provides an overview of the modelling of get services (<a href="#s4grid:GetService">s4grid:GetService</a>). A get service is performed through get operations (<a href="#s4grid:GetOperation">s4grid:GetOperation</a>). 
+	<p><a href="#Figure_17">Figure 17</a> provides an overview of the modelling of get services (<a href="#s4grid:GetService">s4grid:GetService</a>). A get service is performed through get operations (<a href="#s4grid:GetOperation">s4grid:GetOperation</a>). 
 	  The get operation modelling involves two main concepts, namely 
 	  <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a> and <a href="#s4grid:GetOperationOutput">s4grid:GetOperationOutput</a>. As can be seen in the figure, the modelling of get services totally 
 	  relies on the service model proposed in ONEM2M. The representation of the inputs and outputs of a get service has been extracted from the IEC 62056-6-2:2017.</p>
@@ -246,14 +258,14 @@
 	<p>A get operation needs one input which represents what is going to be retrieved (the whole instance or just a property of the instance). 
 	Therefore, the input of a get operation can be either a class, the range of datatype property, or the range of an object property. 
 	The <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a> class specifies the instance from which data is going to be retrieved by indicating the OBIS code 
-	(<a href="#s4grid:getInputFromObis">s4grid:getInputFromObis</a>). If only the OBIS code is specified, it is understood that the whole instance is going to be retrieved. Moreover, 
+	(<a href="#s4grid:obtainInputFromObis">s4grid:obtainInputFromObis</a>). If only the OBIS code is specified, it is understood that the whole instance is going to be retrieved. Moreover, 
 	the <a href="#s4grid:GetOperationPropertyInput">s4grid:GetOperationPropertyInput</a> class specifies the object/datatype property of an instance from which data is going to be retrieved by 
 	indicating the OBIS code and the name of the object/datatype property (<a href="#s4grid:obtaintInputForProperty">s4grid:obtaintInputForProperty</a>). 
 	If the OBIS code and the property name are specified, it is understood that just the range of a property of the instance is going to be retrieved.</p>
 
-	<p>A get operation is going to generate one output which represents the type of what is going to be retrieved. The output of a get operation (<a href="#s4grid:getOperationOutput">s4grid:getOperationOutput</a>) can be either a class or a datatype. The <a href="#s4grid:GetOperationDataOutput">s4grid:GetOperationDataOutput</a> 
-	  specifies that the output is going to datatype. In this case the type of the output is defined using the <a href="#s4grid:hasOutputDataType">s4grid:hasOutputDataType</a> 
-	  property, indicating the name of the datatype. The <a href="#s4grid:GetOperationObjectOutput">s4grid:GetOperationObjectOutput</a> specifies that the output is going to be a class.
+	<p>A get operation is going to generate one output which represents the type of what is going to be retrieved. The output of a get operation (<a href="#s4grid:GetOperationOutput">s4grid:GetOperationOutput</a>) can be either a class or a datatype. The <a href="#s4grid:GetOperationDataOutput">s4grid:GetOperationDataOutput</a> 
+	  specifies that the output is going to be a datatype. In this case the type of the output is defined using the <a href="#s4grid:hasOutputDataType">s4grid:hasOutputDataType</a> 
+	  property, indicating the name of the datatype. The <a href="#s4grid:GetOperationObjectOutput">s4grid:GetOperationObjectOutput</a> class specifies that the output is going to be a class.
 	   In this case the type of the output is defined using the <a href="#s4grid:hasOutputObjectType">s4grid:hasOutputObjectType</a> property, indicating the name of the class.</p>
 	  
 	<p>Additionally, in the case of a get service of a <a href="#s4grid:ProfileGeneric">s4grid:ProfileGeneric</a> class a selective access (<a href="#s4grid:SelectiveAccess">s4grid:SelectiveAccess</a>) can be specified. 
@@ -262,44 +274,49 @@
 
 	<figure>
 	  <a href="diagrams/SAREF4GRID_Get_service.png"><img src="diagrams/SAREF4GRID_Get_service.png" alt="Get service model"/></a>
-	  <figcaption id="Figure_16">Figure 16: Get service model</figcaption>
+	  <figcaption id="Figure_16">Figure 17: Get service model</figcaption>
 	</figure>
 
 
-	<h3>Set Services</h3>
+	<h3>Set service</h3>
 
-	<p><a href="#Figure_17">Figure 17</a> provides an overview of the modelling of set services (<a href="#s4grid:SetService">s4grid:SetService</a>). A set service is performed through set operations (<a href="#s4grid:SetOperation">s4grid:SetOperation</a>). The set operation modelling involves one main concept, 
+	<p><a href="#Figure_18">Figure 18</a> provides an overview of the modelling of set services (<a href="#s4grid:SetService">s4grid:SetService</a>). A set service is performed through set operations (<a href="#s4grid:SetOperation">s4grid:SetOperation</a>). The set operation modelling involves one main concept, 
 	  namely <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a>. As can be seen in the figure, the modelling of set services totally relies on the service model proposed in ONEM2M.
 	   In order to reduce duplication with the ONEM2M documentation, the reader is referred to the ONEM2M specification for details about service modelling.
 		The representation of the inputs and outputs of a set service has been extracted from the IEC 62056-6-2:2017.</p>
 
-	<p>The input of a set service can be a class (element that is going to be modified) and either a class, the range of datatype property or the range of an object property (what is going to be modified).
-	   The <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a> class specifies the instantiation from which data is going to be modified by indicating the OBIS code 
-	   (<a href="#s4grid:obtainInputFromObis">s4grid:obtainInputFromObis</a>). The <a href="#s4grid:SetOperationObisInput">s4grid:SetOperationObisInput</a> class indicates that the whole instantiate is going to be modified. In this case the type of the input is defined 
-	   using the <a href="#s4grid:hasInputObjectType">s4grid:hasInputObjectType</a> property, indicating the name of the class expected to modify the instantiate. The 
-	   <a href="#s4grid:SetOperationObjectInput">s4grid:SetOperationObjectInput</a> class indicates that just the range of an object property of the instantiate is going to be modified. 
+	<p> A set operation needs two inputs: the element that is going to be modified and the new data that is going to replace the old data. The element that is going to be modified is represented by a class 
+	meanwhile the new data is represented either by a class, the range of a datatype property, or the range of an object property (depending on if the whole instance is going to be modified or just a property). 
+	Therefore, the <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a> class specifies the instance from which data is going to be modified by indicating the OBIS code 
+	   (<a href="#s4grid:obtainInputFromObis">s4grid:obtainInputFromObis</a>) and the new data is represented either by the <a href="#s4grid:SetOperationObisInput">s4grid:SetOperationObisInput</a>, 
+	   <a href="#s4grid:SetOperationObjectInput">s4grid:SetOperationObjectInput</a> or <a href="#s4grid:SetOperationDataInput">s4grid:SetOperationDataInput</a> classes. 
+	   The <a href="#s4grid:SetOperationObisInput">s4grid:SetOperationObisInput</a> class indicates that the whole instance is going to be modified. In this case the type of the input is defined 
+	   using the <a href="#s4grid:hasInputObjectType">s4grid:hasInputObjectType</a> property, indicating the name of the class expected to modify the instance. The 
+	   <a href="#s4grid:SetOperationObjectInput">s4grid:SetOperationObjectInput</a> class indicates that just the range of an object property of the instance is going to be modified. 
 	   In this case the type of the input is defined using the <a href="#s4grid:obtainInputForProperty">s4grid:obtainInputForProperty</a>, which indicates the name of the object property whose range is going to be modified, and 
-	   the <a href="#s4grid:inputObjectType">s4grid:inputObjectType</a> property, indicating the name of the class expected to modify the range of the object property. 
-	   The <a href="#s4grid:SetOperationDataInput">s4grid:SetOperationDataInput</a> class indicates that just the range of a datatype property of the instantiate is going to be modified. 
+	   the <a href="#s4grid:hasInputObjectType">s4grid:hasInputObjectType</a> property, indicating the name of the class expected to modify the range of the object property. 
+	   The <a href="#s4grid:SetOperationDataInput">s4grid:SetOperationDataInput</a> class indicates that just the range of a datatype property of the instance is going to be modified. 
 	   In this case the type of the input is defined using the <a href="#s4grid:obtainInputForProperty">s4grid:obtainInputForProperty</a>, which indicates the name of the datatype property whose range is going to be modified, 
 	   and the <a href="#s4grid:hasInputDataType">s4grid:hasInputDataType</a> property, indicating the name of the datatype expected to modify the range of the datatype property.</p>
 
 	<figure>
 	  <a href="diagrams/SAREF4GRID_Set_service.png"><img src="diagrams/SAREF4GRID_Set_service.png" alt="Set service model"/></a>
-	  <figcaption id="Figure_17">Figure 17: Set service model</figcaption>
+	  <figcaption id="Figure_17">Figure 18: Set service model</figcaption>
 	</figure>
 
 
-	<h3>Action Services</h3>
+	<h3>Action service</h3>
 
-	<p><a href="#Figure_18">Figure 18</a> provides an overview of the modelling of action services (<a href="#s4grid:ActionService">s4grid:ActionService</a>). The action service modelling involves one main concept, namely 
+	<p><a href="#Figure_19">Figure 19</a> provides an overview of the modelling of action services (<a href="#s4grid:ActionService">s4grid:ActionService</a>). An action service is performed 
+	through action operations (<a href="#s4grid:ActionOperation">s4grid:ActionOperation</a>). The action operation modelling involves one main concept, namely 
 	  <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a>. As can be seen in the figure, the modelling of action services totally relies on the service model proposed in ONEM2M. 
 	  In order to reduce duplication with the ONEM2M documentation, the reader is referred to the ONEM2M specification for details about service modelling. 
 	  The representation of the inputs and outputs of an action service has been extracted from the IEC 62056-6-2:2017.</p>
 
-	<p>The input of an action service can be a class (element that is going to be affected by the action) and either a class or a value (parameters needed by the action to operate). 
-	  The <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a> class specifies the instantiation that is going to be affected by the action by indicating the OBIS code (<a href="#s4grid:obtainInputFromObis">s4grid:obtainInputFromObis</a>). 
-	  The <a href="#s4grid:SimpleActionOperationInput">s4grid:SimpleActionOperationInput</a> class indicates that the parameter needed by the action to operate is simple (i.e., integer, string, etc.). 
+	<p>An action operation needs two inputs: the element that is going to be affected by an action and the parameters necessary for the action to be executed. The element that is going to be affected by an action is represented by a class and the parameters 
+	are either represented by a class or a value. Therefore, the <a href="#s4grid:CosemOperationInput">s4grid:CosemOperationInput</a> class specifies the instance that is going to be affected by the action by indicating the OBIS code (<a href="#s4grid:obtainInputFromObis">s4grid:obtainInputFromObis</a>) 
+	and the parameters are represented either by the <a href="#s4grid:SimpleActionOperationInput">s4grid:SimpleActionOperationInput</a> or the  <a href="#s4grid:ComplexActionOperationInput">s4grid:ComplexActionOperationInput</a>. 
+	The <a href="#s4grid:SimpleActionOperationInput">s4grid:SimpleActionOperationInput</a> class indicates that the parameter needed by the action to operate is simple (i.e., integer, string, etc.). 
 	  In this case the value of the parameter is defined using the <a href="#s4grid:hasActionValue">s4grid:hasActionValue</a> property. The 
 	  <a href="#s4grid:ComplexActionOperationInput">s4grid:ComplexActionOperationInput</a> class indicates that the parameter needed by the action to operate is complex (i.e., structure). 
 	  There are two cases of complex parameters: <a href="#s4grid:PresetAdjustingTime">s4grid:PresetAdjustingTime</a> class, which is needed by a <a href="#s4grid:Clock">s4grid:Clock</a> to modify the time, 
@@ -307,7 +324,7 @@
 
 	<figure>
 	  <a href="diagrams/SAREF4GRID_Action_service.png"><img src="diagrams/SAREF4GRID_Action_service.png" alt="Action service model"/></a>
-	  <figcaption id="Figure_18">Figure 18: Action service model</figcaption>
+	  <figcaption id="Figure_18">Figure 19: Action service model</figcaption>
 	</figure>
 </body>
 </html>
