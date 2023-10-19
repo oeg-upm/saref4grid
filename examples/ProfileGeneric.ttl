@@ -49,6 +49,22 @@ s4grid:hasCapturePeriod a owl:DatatypeProperty .
 
 s4grid:hasObis a owl:DatatypeProperty .
 
+s4grid:hasClockBase a owl:DatatypeProperty .
+
+s4grid:hasDaylightSavingsBegin a owl:DatatypeProperty .
+
+s4grid:hasDaylightSavingsDeviation a owl:DatatypeProperty .
+
+s4grid:hasDaylightSavingsEnabled a owl:DatatypeProperty .
+
+s4grid:hasDaylightSavingsEnd a owl:DatatypeProperty .
+
+s4grid:hasStatus a owl:DatatypeProperty .
+
+s4grid:hasTime a owl:DatatypeProperty .
+
+s4grid:hasTimeZone a owl:DatatypeProperty .
+
 
 #################################################################
 #    Classes
@@ -60,7 +76,10 @@ s4grid:Meter a owl:Class .
 
 s4grid:PropertyValue a owl:Class .
 
-s4grid:MeterProperty a owl:Class .
+saref:Property a owl:Class .
+
+s4grid:MeterProperty a owl:Class ;
+	rdfs:subClassOf saref:Property .
 
 s4grid:ProfileGeneric a owl:Class .
 
@@ -123,7 +142,16 @@ s4grid:ActiveEnergy a s4grid:EnergyAndPowerProperty,
 			ex:TotalIncrementalActiveEnergyExport1234 .
 
 ex:Clock1234 a s4grid:Clock,
-        owl:NamedIndividual .
+        owl:NamedIndividual ;
+    s4grid:hasClockBase "4"^^xsd:int ;
+    s4grid:hasDaylightSavingsBegin "2023-03-26T02:00:00"^^xsd:dateTime ;
+    s4grid:hasDaylightSavingsDeviation "60"^^xsd:integer ;
+    s4grid:hasDaylightSavingsEnabled "true"^^xsd:boolean ;
+    s4grid:hasDaylightSavingsEnd "2023-10-29T03:00:00"^^xsd:dateTime ;
+    s4grid:hasObis "0-0:1.0.0.255"^^xsd:string ;
+    s4grid:hasStatus "1"^^xsd:int ;
+    s4grid:hasTime "2023-05-30T09:00:00"^^xsd:dateTime ;
+    s4grid:hasTimeZone "120"^^xsd:long .
 
 ex:Measurement1 a saref:Measurement,
         owl:NamedIndividual ;

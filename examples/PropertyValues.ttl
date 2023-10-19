@@ -51,8 +51,10 @@ s4grid:Meter a owl:Class .
 
 s4grid:PropertyValue a owl:Class .
 
-s4grid:MeterProperty a owl:Class .
+saref:Property a owl:Class .
 
+s4grid:MeterProperty a owl:Class ;
+	rdfs:subClassOf saref:Property .
 
 #################################################################
 #    Individuals

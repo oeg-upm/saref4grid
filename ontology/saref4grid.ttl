@@ -367,7 +367,8 @@ saref:hasValue a owl:DatatypeProperty ;
 s4grid:obtainFromEntry a owl:DatatypeProperty ;
 	rdfs:comment "It defines the first entry to be retrieved from a profile generic"@en ;
     rdfs:label "obtain from entry"@en ;
-	rdfs:domain s4grid:EntryDescriptor .
+	rdfs:domain s4grid:EntryDescriptor ;
+	rdfs:range xsd:unsignedLong .
 
 s4grid:obtainFromValue a owl:DatatypeProperty ;
 	rdfs:comment "It restricts the range of entries to be retrieved from a profile generic defining the oldest or smallest entry to retrieve"@en ;
@@ -606,7 +607,8 @@ s4grid:hasOutputObjectType a owl:DatatypeProperty ;
 s4grid:obtainToEntry a owl:DatatypeProperty ;
 	rdfs:comment "It defines the last entry to be retrieved from a profile generic"@en ;
     rdfs:label "obtain to entry"@en ;
-	rdfs:domain s4grid:EntryDescriptor .
+	rdfs:domain s4grid:EntryDescriptor ;
+	rdfs:range xsd:unsignedLong .
 
 s4grid:obtainToValue a owl:DatatypeProperty ;
 	rdfs:comment "It restricts the range of entries to be retrieved from a profile generic defining the newest or largest entry to retrieve"@en ;

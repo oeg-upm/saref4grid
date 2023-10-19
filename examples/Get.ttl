@@ -71,9 +71,11 @@ s4grid:GetOperationPropertyInput a owl:Class .
 
 s4grid:GetOperationDataOutput a owl:Class .
 
-s4grid:RangeDescriptor a owl:Class .
+s4grid:RangeDescriptor a owl:Class ;
+	rdfs:subClassOf s4grid:SelectiveAccess .
 
-s4grid:EntryDescriptor a owl:Class .
+s4grid:EntryDescriptor a owl:Class ;
+	rdfs:subClassOf s4grid:SelectiveAccess .
 
 s4grid:GetOperationOutput a owl:Class .
 
@@ -184,8 +186,8 @@ ex:OperationInputIncrementalLoadProfileEntry a s4grid:CosemOperationInput,
 
 ex:EntryDescriptor1 a s4grid:EntryDescriptor,
         owl:NamedIndividual ;
-    s4grid:obtainFromEntry "1"^^xsd:int ;
-	s4grid:obtainToEntry "10"^^xsd:int .
+    s4grid:obtainFromEntry "1"^^xsd:unsignedLong ;
+	s4grid:obtainToEntry "10"^^xsd:unsignedLong .
 
 ex:OutputIncrementalLoadProfileEntry a s4grid:GetOperationObjectOutput,
         owl:NamedIndividual ;

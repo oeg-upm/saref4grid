@@ -114,7 +114,7 @@ ex:SpecialDayEntryOperation a s4grid:ActionOperation,
         owl:NamedIndividual ;
     oneM2M:hasInput ex:SpecialDayEntry1 .
 
-ex:SpecialDayEntry1 a s4grid:PresetAdjustingTime,
+ex:SpecialDayEntry1 a s4grid:SpecialDayEntry,
         owl:NamedIndividual ;
     s4grid:obtainInputFromObis "0-0:13.0.1.255"^^xsd:string ;
 	s4grid:hasIndex "1"^^xsd:unsignedShort ;
